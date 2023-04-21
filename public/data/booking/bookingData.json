@@ -1,0 +1,102 @@
+[
+  [
+    {
+      "id": 1,
+      "title": "데스노트",
+      "ageLimit": 18,
+      "image": "https://tkfile.yes24.com/upload2/PerfBlog/202205/20220519/20220519-41357.jpg"
+    },
+    {
+      "id": 2,
+      "title": "오페라의 유령",
+      "ageLimit": 15,
+      "image": "https://res.heraldm.com/content/image/2022/12/23/20221223000072_0.jpg"
+    },
+    {
+      "id": 3,
+      "title": "해적",
+      "ageLimit": 12,
+      "image": "https://www.globalnewsagency.kr/news/thumbnail/202301/281025_285803_392_v150.jpg"
+    },
+    {
+      "id": 4,
+      "title": "오만과 편견",
+      "ageLimit": 18,
+      "image": "https://tkfile.yes24.com/upload2/PerfBlog/202008/20200812/20200812-37327_01.jpg"
+    },
+    {
+      "id": 5,
+      "title": "옥탑방 고양이",
+      "ageLimit": "all",
+      "image": "https://img.hankyung.com/photo/201701/BF.13080492.1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "옥탑방 고양이",
+      "ageLimit": "all",
+      "image": "https://img.hankyung.com/photo/201701/BF.13080492.1.jpg"
+    },
+    {
+      "id": 7,
+      "title": "옥탑방 고양이",
+      "ageLimit": "all",
+      "image": "https://img.hankyung.com/photo/201701/BF.13080492.1.jpg"
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "샤롯데씨어터",
+      "description": "대한민국 최초의 뮤지컬 전용극장 최상의 공연으로, 최고의 감동을 선사합니다!",
+      "image": "https://t1.daumcdn.net/cfile/tistory/1820A04B50714B391D"
+    },
+    {
+      "id": 2,
+      "name": "LG 아트센터",
+      "description": "대한민국 최고의 예술 전시장 및 극장. 최상의 수준의 음향 제공으로 최고의 경험을 선사합니다!",
+      "image": "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202210/16/8de8576b-ba22-4039-81f8-4bc62fb74757.jpg"
+    },
+    {
+      "id": 3,
+      "name": "샤롯데씨어터",
+      "description": "대한민국 최초의 뮤지컬 전용극장 최상의 공연으로, 최고의 감동을 선사합니다!",
+      "image": "https://t1.daumcdn.net/cfile/tistory/1820A04B50714B391D"
+    },
+    {
+      "id": 4,
+      "name": "LG 아트센터",
+      "description": "대한민국 최고의 예술 전시장 및 극장. 최상의 수준의 음향 제공으로 최고의 경험을 선사합니다!",
+      "image": "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202210/16/8de8576b-ba22-4039-81f8-4bc62fb74757.jpg"
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "메인홀 4층",
+      "totalSeats": 100,
+      "availableSeats": 85,
+      "time": "14:10 ~ 16:30"
+    },
+    {
+      "id": 2,
+      "name": "충무 아트홀 2층",
+      "totalSeats": 100,
+      "availableSeats": 42,
+      "time": "20:20 ~ 23:30"
+    },
+    {
+      "id": 3,
+      "name": "메인홀 4층",
+      "totalSeats": 100,
+      "availableSeats": 85,
+      "time": "14:10 ~ 16:30"
+    },
+    {
+      "id": 4,
+      "name": "충무 아트홀 2층",
+      "totalSeats": 100,
+      "availableSeats": 42,
+      "time": "20:20 ~ 23:30"
+    }
+  ]
+]

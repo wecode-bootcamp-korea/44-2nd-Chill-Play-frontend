@@ -1,0 +1,87 @@
+[
+  [
+    {
+      "musicalId": 2,
+      "musicalTitle": "오페라의 유령",
+      "musicalImage": "https://ticketimage.interpark.com/Play/image/large/23/23000632_p.gif",
+      "releasedDate": "2023-05-01",
+      "ageLimit": 12,
+      "reservationRate": "30.1"
+    },
+    {
+      "musicalId": 3,
+      "musicalTitle": "맨오브 라만차",
+      "musicalImage": "https://t1.daumcdn.net/cfile/tistory/2223585055C9B02F2A",
+      "releasedDate": "2023-05-01",
+      "ageLimit": 15,
+      "reservationRate": "30.1"
+    },
+    {
+      "musicalId": 1,
+      "musicalTitle": "데스노트",
+      "musicalImage": "https://ticketimage.interpark.com/Play/image/large/23/23002291_p.gif",
+      "releasedDate": "2023-05-01",
+      "ageLimit": 15,
+      "reservationRate": "26.6"
+    },
+    {
+      "musicalId": 4,
+      "musicalTitle": "시카고",
+      "musicalImage": "https://ticketimage.interpark.com/Play/image/large/23/23004325_p.gif",
+      "releasedDate": "2023-05-01",
+      "ageLimit": 15,
+      "reservationRate": "13.3"
+    },
+    {
+      "musicalId": 5,
+      "musicalTitle": "레미제라블",
+      "musicalImage": "https://ticketimage.interpark.com/Play/image/large/19/19005246_p.gif",
+      "releasedDate": "2023-05-12",
+      "ageLimit": 1,
+      "reservationRate": "0.0"
+    },
+    {
+      "musicalId": 6,
+      "musicalTitle": "슈퍼클로젯",
+      "musicalImage": "https://img2.tmon.kr/cdn4/deals/2021/12/22/9402541394/original_9402541394_front_8fc8a_1640152380production.jpg",
+      "releasedDate": "2023-05-12",
+      "ageLimit": 1,
+      "reservationRate": "0.0"
+    },
+    {
+      "musicalId": 7,
+      "musicalTitle": "캣츠",
+      "musicalImage": "https://ticketimage.interpark.com/Play/image/large/23/23003680_p.gif",
+      "releasedDate": "2023-05-12",
+      "ageLimit": 1,
+      "reservationRate": "0.0"
+    },
+    {
+      "musicalId": 8,
+      "musicalTitle": "아이다",
+      "musicalImage": "https://ticketimage.interpark.com/Play/image/large/22/22001534_p.gif",
+      "releasedDate": "2023-05-12",
+      "ageLimit": 1,
+      "reservationRate": "0.0"
+    }
+  ],
+  [
+    {
+      "theaterId": 1,
+      "theaterName": "샤롯데 씨어터",
+      "theaterImage": "https://www.charlottetheater.co.kr/images/stage/intro_img1.jpg",
+      "description": "대한민국 최초의 뮤지컬 전용극장 최상의 공연으로, 최고의 감동을 선사합니다!"
+    }
+  ],
+  [
+    {
+      "musicalScheduleId": 4,
+      "totalSeat": 100,
+      "remainingSeats": "53",
+      "startTime": "19:00:00",
+      "endTime": "21:50:00",
+      "date": "2023-05-04",
+      "time": "19:00:00"
+    }
+  ]
+]
