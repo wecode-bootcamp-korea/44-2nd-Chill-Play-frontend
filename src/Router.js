@@ -9,6 +9,7 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ProductList from './pages/ProductList/ProductList';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import KakaoAuth from './pages/SignIn/KakaoAuth/KakaoAuth';
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
         <Route path="/payment" element={<Payment />} />
         <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="/productlist" element={<ProductList />} />
+        <Route path="/oauth/callback/kakao" element={<KakaoAuth />} />
       </Routes>
       <Footer />
     </BrowserRouter>
