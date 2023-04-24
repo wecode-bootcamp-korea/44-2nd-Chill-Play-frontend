@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "Segoe UI", Arial, sans-serif;
-    margin: 0;
     line-height: 1.4;
     margin: 0;
   }
