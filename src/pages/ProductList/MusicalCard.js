@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MusicalCard = ({ item }) => {
+  const navigate = useNavigate();
   const ratedAge = age => {
     const ageRate = {
       18: '18',
@@ -9,6 +11,14 @@ const MusicalCard = ({ item }) => {
       12: '12',
     };
     return ageRate[age] || 'All';
+  };
+
+  const goToDetail = musicalId => {
+    navigate(`/productdetail/detail/${musicalId}`);
+  };
+
+  const goToBooking = musical => {
+    navigate(`/booking`, { state: musical });
   };
 
   const compareDate = day => {
@@ -42,7 +52,11 @@ const MusicalCard = ({ item }) => {
       <Card>
         <RankImage>
           <MusicalRank rank={item.id}>No.{item.id}</MusicalRank>
-          <Thumbnail>
+          <Thumbnail
+            onClick={() => {
+              goToDetail(item.musicalId);
+            }}
+          >
             <img src={item.postImageUrl} alt="뮤지컬 포스터" />
             <FilmRating limit={item.ageRated}>
               {ratedAge(item.ageRated)}
@@ -65,7 +79,7 @@ const MusicalCard = ({ item }) => {
             <em>{compareDate(item.releasedDate)}</em>
           </Release>
         </CardContent>
-        <BookingBtn>예매하기</BookingBtn>
+        <BookingBtn onClick={() => goToBooking(item)}>예매하기</BookingBtn>
       </Card>
     </CardWrap>
   );
