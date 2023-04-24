@@ -1,0 +1,82 @@
+[
+  {
+    "musicalId": 2,
+    "reservationRate": "30.1",
+    "musicalName": "오페라의 유령",
+    "postImageUrl": "https://ticketimage.interpark.com/Play/image/large/23/23000632_p.gif",
+    "releasedDate": "2023-05-01",
+    "endDate": "2023-05-10",
+    "ageRated": 12,
+    "actors": "{\"actor\": \"조승우, 김주택, 전동성, 손지수, 송은혜, 송원근\"}"
+  },
+  {
+    "musicalId": 3,
+    "reservationRate": "30.1",
+    "musicalName": "맨오브 라만차",
+    "postImageUrl": "https://t1.daumcdn.net/cfile/tistory/2223585055C9B02F2A",
+    "releasedDate": "2023-05-01",
+    "endDate": "2023-05-10",
+    "ageRated": 15,
+    "actors": "{\"actor\": \"류정한, 조승우, 윤공주, 김지현, 최수진, 이훈진\"}"
+  },
+  {
+    "musicalId": 1,
+    "reservationRate": "26.6",
+    "musicalName": "데스노트",
+    "postImageUrl": "https://ticketimage.interpark.com/Play/image/large/23/23002291_p.gif",
+    "releasedDate": "2023-05-01",
+    "endDate": "2023-05-10",
+    "ageRated": 15,
+    "actors": "{\"actor\": \"홍광호, 고은성, 김준수, 김성철, 이영미, 장은아\"}"
+  },
+  {
+    "musicalId": 4,
+    "reservationRate": "13.3",
+    "musicalName": "시카고",
+    "postImageUrl": "https://ticketimage.interpark.com/Play/image/large/23/23004325_p.gif",
+    "releasedDate": "2023-05-01",
+    "endDate": "2023-05-10",
+    "ageRated": 15,
+    "actors": "{\"actor\": \"벨마 켈리, 록시 하트, 빌리 플린, 마마 모튼, 에이모스 하트, 메리 선샤인\"}"
+  },
+  {
+    "musicalId": 5,
+    "reservationRate": "0.0",
+    "musicalName": "레미제라블",
+    "postImageUrl": "https://ticketimage.interpark.com/Play/image/large/19/19005246_p.gif",
+    "releasedDate": "2023-05-12",
+    "endDate": "2023-05-14",
+    "ageRated": 1,
+    "actors": "{\"actor\": \"콤 윌킨슨, 알피 보, 로저 앨럼, 필립 콰스트, 패티 루폰, 랜디 그라프\"}"
+  },
+  {
+    "musicalId": 6,
+    "reservationRate": "0.0",
+    "musicalName": "슈퍼클로젯",
+    "postImageUrl": "https://img2.tmon.kr/cdn4/deals/2021/12/22/9402541394/original_9402541394_front_8fc8a_1640152380production.jpg",
+    "releasedDate": "2023-05-12",
+    "endDate": "2023-05-14",
+    "ageRated": 1,
+    "actors": "{\"actor\": \"유효경, 김나연, 한정우, 이지윤, 정윤희, 이성훈\"}"
+  },
+  {
+    "musicalId": 7,
+    "reservationRate": "0.0",
+    "musicalName": "캣츠",
+    "postImageUrl": "https://ticketimage.interpark.com/Play/image/large/23/23003680_p.gif",
+    "releasedDate": "2023-05-12",
+    "endDate": "2023-05-14",
+    "ageRated": 1,
+    "actors": "{\"actor\": \"시베리오 페스쿠치, 브레들리 델라로스벨, 메튜 레빅, 페트라 일스 담, 키안 휴스, 타린 도나\"}"
+  },
+  {
+    "musicalId": 8,
+    "reservationRate": "0.0",
+    "musicalName": "아이다",
+    "postImageUrl": "https://ticketimage.interpark.com/Play/image/large/22/22001534_p.gif",
+    "releasedDate": "2023-05-12",
+    "endDate": "2023-05-14",
+    "ageRated": 1,
+    "actors": "{\"actor\": \"윤공주, 전나영, 김수하, 아이비, 민경아, 김우형\"}"
+  }
+]

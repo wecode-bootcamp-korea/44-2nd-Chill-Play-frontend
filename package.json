@@ -16,10 +16,13 @@
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.9",
     "styled-reset": "^4.4.6",
     "web-vitals": "^2.1.0",
-    "zustand": "^4.3.7"
+    "zustand": "^4.3.7",
+    "swiper": "^9.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
