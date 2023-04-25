@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "데스노트",
+    "post_image_url": "https://ticketimage.interpark.com/Play/image/large/23/23002291_p.gif",
+    "released_date": "2023-05-01",
+    "end_date": "2023-05-10",
+    "age_rated_id": 3,
+    "boarding_status_id": 2,
+    "booking_rating_total": 500,
+    "booking_rating_name": 150
+  },
+  {
+    "id": 2,
+    "name": "오페라의 유령",
+    "post_image_url": "https://ticketimage.interpark.com/Play/image/large/23/23000632_p.gif",
+    "released_date": "2023-05-08",
+    "end_date": "2023-05-21",
+    "age_rated_id": 2,
+    "boarding_status_id": 2,
+    "booking_rating_total": 500,
+    "booking_rating_name": 92
+  },
+  {
+    "id": 3,
+    "name": "맨오브 라만차",
+    "post_image_url": "https://t1.daumcdn.net/cfile/tistory/2223585055C9B02F2A",
+    "released_date": "2023-05-01",
+    "end_date": "2023-05-10",
+    "age_rated_id": 3,
+    "boarding_status_id": 1,
+    "booking_rating_total": 500,
+    "booking_rating_name": 48
+  },
+  {
+    "id": 4,
+    "name": "시카고",
+    "post_image_url": "https://ticketimage.interpark.com/Play/image/large/23/23004325_p.gif",
+    "released_date": "2023-05-01",
+    "end_date": "2023-05-10",
+    "age_rated_id": 4,
+    "boarding_status_id": 2,
+    "booking_rating_total": 500,
+    "booking_rating_name": 34
+  },
+  {
+    "id": 5,
+    "name": "레미제라블",
+    "post_image_url": "https://ticketimage.interpark.com/Play/image/large/19/19005246_p.gif",
+    "released_date": "2023-04-23",
+    "end_date": "2023-05-23",
+    "age_rated_id": 1,
+    "boarding_status_id": 1,
+    "booking_rating_total": 500,
+    "booking_rating_name": 66
+  },
+  {
+    "id": 6,
+    "name": "슈퍼클로젯",
+    "post_image_url": "https://img2.tmon.kr/cdn4/deals/2021/12/22/9402541394/original_9402541394_front_8fc8a_1640152380production.jpg",
+    "released_date": "2023-04-29",
+    "end_date": "2023-05-14",
+    "age_rated_id": 1,
+    "boarding_status_id": 1,
+    "booking_rating_total": 500,
+    "booking_rating_name": 21
+  },
+  {
+    "id": 7,
+    "name": "캣츠",
+    "post_image_url": "https://ticketimage.interpark.com/Play/image/large/23/23003680_p.gif",
+    "released_date": "2023-05-12",
+    "end_date": "2023-05-14",
+    "age_rated_id": 1,
+    "boarding_status_id": 2,
+    "booking_rating_total": 500,
+    "booking_rating_name": 53
+  },
+  {
+    "id": 8,
+    "name": "아이다",
+    "post_image_url": "https://ticketimage.interpark.com/Play/image/large/22/22001534_p.gif",
+    "released_date": "2023-05-10",
+    "end_date": "2023-05-14",
+    "age_rated_id": 1,
+    "boarding_status_id": 2,
+    "booking_rating_total": 500,
+    "booking_rating_name": 36
+  }
+]
