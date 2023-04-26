@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Lock, UserPlus, User, Headphones } from 'react-feather';
+import { Lock, Unlock, UserPlus, User, Headphones } from 'react-feather';
 
 function NavHeader() {
+  const [currentLogin, setCurrentLogin] = useState(false);
   const navigate = useNavigate();
+  const isLogin = localStorage.getItem('TOKEN');
+
+  const LogoutHandler = () => {
+    localStorage.removeItem('TOKEN');
+    setCurrentLogin(prev => !prev);
+  };
+
   return (
     <HeaderContent>
       <HeaderTitle
@@ -20,6 +28,19 @@ function NavHeader() {
         </span>
       </HeaderTitle>
       <HeaderMenu>
+        {isLogin ? (
+          <HeaderItem onClick={() => LogoutHandler()}>
+            <Unlock size={24} />
+            <span>로그아웃</span>
+          </HeaderItem>
+        ) : (
+          <HeaderItem>
+            <Link to="/signin">
+              <Lock size={24} />
+              <span>로그인</span>
+            </Link>
+          </HeaderItem>
+        )}
         {HEADER_MENU_LIST.map(list => {
           return (
             <HeaderItem key={list.id}>
@@ -98,24 +119,18 @@ const HeaderItem = styled.li`
 const HEADER_MENU_LIST = [
   {
     id: 1,
-    path: '/signin',
-    Text: '로그인',
-    icon: <Lock size={24} />,
-  },
-  {
-    id: 2,
     path: '/signup',
     Text: '회원가입',
     icon: <UserPlus size={24} />,
   },
   {
-    id: 3,
+    id: 2,
     path: '',
     Text: 'My Muse',
     icon: <User size={24} />,
   },
   {
-    id: 4,
+    id: 3,
     path: '',
     Text: '고객센터',
     icon: <Headphones size={24} />,

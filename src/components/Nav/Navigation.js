@@ -1,9 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Search } from 'react-feather';
+import { API } from '../../config';
 
 function Navigation({ isActive }) {
+  const [searchText, setSearchText] = useState('');
+  const [searchFocus, setSearchFocus] = useState(false);
+  const [musicalList, setMusicalList] = useState([]);
+  const navigate = useNavigate();
+  const searchInputRef = useRef();
+
+  const searchMusical = e => {
+    setSearchText(e.target.value);
+  };
+
+  const SearchFocus = () => {
+    setSearchFocus(prev => !prev);
+  };
+
+  const goToDetail = detailId => {
+    navigate(`/productdetail/${detailId}`);
+    setSearchText('');
+  };
+
+  const handleOutsideClick = e => {
+    if (searchInputRef.current && !searchInputRef.current.contains(e.target)) {
+      setSearchFocus(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
+
+  useEffect(() => {
+    fetch(`${API.navigationSearch}?keyword=${searchText}&limit=4&offset=0`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    })
+      .then(res => res.json())
+      .then(list => setMusicalList(list));
+  }, [searchText]);
+
   return (
     <>
       <NavMenu>
@@ -20,9 +60,35 @@ function Navigation({ isActive }) {
           );
         })}
       </NavMenu>
-      <SearchForm>
+      <SearchForm ref={searchInputRef}>
         <SearchFormLeft />
-        <SearchInput type="text" id="headerKeyword" isActive={isActive} />
+        <SearchInput
+          type="text"
+          id="headerKeyword"
+          value={searchText}
+          onChange={searchMusical}
+          onFocus={SearchFocus}
+          isActive={isActive}
+        />
+        {searchFocus && (
+          <SearchBox>
+            {musicalList && musicalList.length > 0 ? (
+              musicalList.map(list => (
+                <SearchResult
+                  key={list.id}
+                  onClick={() => {
+                    goToDetail(list.id);
+                  }}
+                >
+                  <img src={`${list.post_image_url}`} alt="뮤지컬 포스터" />
+                  <span>{list.name}</span>
+                </SearchResult>
+              ))
+            ) : (
+              <p>단어를 입력해 주시기 바랍니다.</p>
+            )}
+          </SearchBox>
+        )}
         <SearchButton type="button" id="headerAddKeyword" isActive={isActive}>
           <Search />
         </SearchButton>
@@ -31,6 +97,61 @@ function Navigation({ isActive }) {
     </>
   );
 }
+
+const SearchResult = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+  cursor: pointer;
+
+  img {
+    height: 80px;
+    width: 60px;
+  }
+  span {
+    font-size: 14px;
+    font-weight: 400;
+  }
+`;
+
+const SearchBox = styled.div`
+  display: flex;
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  flex-direction: column;
+  width: 236px;
+  max-height: 400px;
+  margin-top: 20px;
+  padding: 10px 10px;
+  overflow: auto;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 10;
+  gap: 10px;
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: 10%;
+    background: lightgrey;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(240, 240, 240, 0.1);
+  }
+`;
 
 const StyledLink = styled(Link)`
   color: ${props => props.color};
