@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PieChart from './PieChart';
 import BarChart from './BarChart';
@@ -8,13 +8,19 @@ const swipeBanner = 100;
 
 const ContentBody = ({ musicalData }) => {
   const [index, setIndex] = useState(0);
+  const newSynopsis =
+    musicalData.synopsis && musicalData.synopsis.replace(/\\n/g, '\n');
 
   const addIndex = () => {
-    index >= musicalData.images.length - 1 ? setIndex(0) : setIndex(index + 1);
+    index >= musicalData.musicalImages.length - 1
+      ? setIndex(0)
+      : setIndex(index + 1);
   };
 
   const subIndex = () => {
-    index <= 0 ? setIndex(musicalData.images.length - 1) : setIndex(index - 1);
+    index <= 0
+      ? setIndex(musicalData.musicalImages.length - 1)
+      : setIndex(index - 1);
   };
 
   const translateBanner = index => {
@@ -26,18 +32,26 @@ const ContentBody = ({ musicalData }) => {
       <Information>
         <Synopsis>
           <strong>시놉시스</strong>
-          <TextBox>{musicalData.Synopsis}</TextBox>
+          <TextBox>{newSynopsis}</TextBox>
         </Synopsis>
       </Information>
       <RatingChart>
         <ChartTable>
           <li>
             <strong>성별 예매 분포</strong>
-            <PieChart width="250px" height="250px" />
+            <PieChart
+              width="250px"
+              height="250px"
+              pieChartRate={musicalData.genderBookingRate}
+            />
           </li>
           <li>
             <strong>연령별 예매 분포</strong>
-            <BarChart width="470px" height="250px" />
+            <BarChart
+              width="470px"
+              height="250px"
+              BarChartRate={musicalData.ageBookingRate}
+            />
           </li>
         </ChartTable>
       </RatingChart>
@@ -45,7 +59,7 @@ const ContentBody = ({ musicalData }) => {
         <strong>뮤지컬 스틸컷</strong>
         <StillcutSlide>
           <StyledChevronLeft onClick={subIndex} />
-          {musicalData.images?.map(item => {
+          {musicalData.musicalImages?.map(item => {
             return (
               <SlideWrap key={item.id} trans={translateBanner(index)}>
                 <img src={item} alt="뮤지컬 스틸컷" />
