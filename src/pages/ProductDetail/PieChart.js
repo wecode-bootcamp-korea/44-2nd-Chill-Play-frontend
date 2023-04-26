@@ -8,9 +8,8 @@ const StyledCanvas = styled.canvas`
   margin: 15px auto;
 `;
 
-const PieChart = ({ width, height }) => {
+const PieChart = ({ width, height, pieChartRate }) => {
   const chartRef = useRef(null);
-
   useEffect(() => {
     const myChartRef = chartRef.current.getContext('2d');
     const labelsAndDataSets = {
@@ -21,7 +20,7 @@ const PieChart = ({ width, height }) => {
         datasets: [
           {
             label: '성별',
-            data: [42, 58],
+            data: pieChartRate,
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -36,8 +35,11 @@ const PieChart = ({ width, height }) => {
         aspectRatio: 1,
       },
     };
-    new Chart(myChartRef, labelsAndDataSets);
-  }, []);
+    const pieChart = new Chart(myChartRef, labelsAndDataSets);
+    return () => {
+      pieChart.destroy();
+    };
+  }, [pieChartRate]);
 
   return <StyledCanvas ref={chartRef} width={width} height={height} />;
 };

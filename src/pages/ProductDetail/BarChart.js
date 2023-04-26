@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Chart from 'chart.js/auto';
 
-const BarChart = ({ width, height }) => {
+const BarChart = ({ width, height, BarChartRate }) => {
   const chartRef = useRef(null);
-
   useEffect(() => {
     const myChartRef = chartRef.current.getContext('2d');
     const labelsAndDataSets = {
@@ -14,7 +13,7 @@ const BarChart = ({ width, height }) => {
         datasets: [
           {
             label: '연령별',
-            data: [8.2, 43.4, 28.6, 13.6],
+            data: BarChartRate,
             backgroundColor: 'rgba(229, 190, 236, 0.6)',
             borderColor: 'rgba(229, 190, 236, 1)',
             borderWidth: 1,
@@ -46,8 +45,11 @@ const BarChart = ({ width, height }) => {
       },
     };
 
-    new Chart(myChartRef, labelsAndDataSets);
-  }, []);
+    const barChart = new Chart(myChartRef, labelsAndDataSets);
+    return () => {
+      return barChart.destroy();
+    };
+  }, [BarChartRate]);
 
   return <StyledCanvas ref={chartRef} width={width} height={height} />;
 };

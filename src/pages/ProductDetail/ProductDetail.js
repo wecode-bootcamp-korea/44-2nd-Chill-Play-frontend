@@ -1,16 +1,52 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ContentBody from './ContentBody';
+import { API } from '../../config';
 function ProductDetail() {
   const [musicalData, setMusicalData] = useState({});
+  const [musicalBanner, setMusicalBanner] = useState([]);
+  const navigate = useNavigate();
+  const params = useParams();
+  const musicalId = params.id;
+
+  const goToBooking = musical => {
+    navigate(`/booking`, { state: musical });
+  };
+
+  const ageRateHandler = age => {
+    const ageRating = {
+      18: '18',
+      15: '15',
+      12: '12',
+    };
+    return ageRating[age] || 'All';
+  };
+
+  const headerVideoHandler = () => {
+    const findMusicalId = musicalBanner.find(musical => {
+      return musical.musicalId === musicalData.musicalId;
+    });
+    return findMusicalId && findMusicalId.thumbnail;
+  };
 
   useEffect(() => {
-    fetch('/data/musicaldetail.json', {
+    fetch(`${API.productDetail}/${musicalId}`, {
+      method: 'GET',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
     })
       .then(response => response.json())
       .then(result => setMusicalData(result));
-  }, []);
+  }, [musicalId]);
+
+  useEffect(() => {
+    fetch('/data/musicaldetail.json', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    })
+      .then(response => response.json())
+      .then(result => setMusicalBanner(result));
+  }, [musicalId]);
 
   return (
     <div>
@@ -18,41 +54,50 @@ function ProductDetail() {
         <>
           <Header>
             <HeaderVideo>
-              <img src={musicalData.thumbnail} alt="하이라이트" />
+              <img
+                src={headerVideoHandler() || '/images/defaultImg.jpg'}
+                alt="하이라이트"
+              />
               <div />
             </HeaderVideo>
           </Header>
           <Content>
             <ContentsTop>
               <PosterWrap>
-                <Poster src={musicalData.images?.[0]} alt="포스터" />
+                <Poster src={musicalData.postImageUrl} alt="포스터" />
               </PosterWrap>
               <PlayTitle>
-                <Grade grade={musicalData.grade}>{musicalData.grade}</Grade>
-                <span>{musicalData.title}</span>
+                <Grade grade={musicalData.ageRated}>
+                  {ageRateHandler(musicalData.age)}
+                </Grade>
+                <span>{musicalData.musicalName}</span>
               </PlayTitle>
               <Rating>
                 <span>예매율</span>
-                <RatingSpan>{musicalData.rating}%</RatingSpan>
+                <RatingSpan>{musicalData.reservationRate}%</RatingSpan>
               </Rating>
               <PlayInfo>
                 <li>
                   <em>시간정보</em>
-                  <span>{musicalData.period} ㅣ </span>
-                  <span>{musicalData.time}분</span>
+                  <span>{musicalData.releasedDate} 개봉 ㅣ </span>
+                  <span>{musicalData.endDate} 마감 ㅣ </span>
+                  <span>상영시간 {musicalData.runningTime}분</span>
                 </li>
                 <li>
                   <em>극장</em>
-                  <span>{musicalData.theater}</span>
+                  <span>{musicalData.theaterName}</span>
                 </li>
                 <li>
-                  <em>출연진</em>
-                  {musicalData.casting?.map(actor => {
-                    return <span key={actor.id}>{actor} ㅣ </span>;
-                  })}
+                  <em>출연진 : </em>
+                  <span>
+                    {musicalData.musicalActors &&
+                      musicalData.musicalActors.actor}
+                  </span>
                 </li>
               </PlayInfo>
-              <TicketBtn>예매하기</TicketBtn>
+              <TicketBtn onClick={() => goToBooking(musicalData)}>
+                예매하기
+              </TicketBtn>
             </ContentsTop>
             <ContentBody musicalData={musicalData} />
           </Content>
