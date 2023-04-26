@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 import NavHeader from './NavHeader';
 import Navigation from './Navigation';
@@ -10,6 +10,8 @@ function Nav() {
   const targetRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const currentPage = location.pathname;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -48,14 +50,16 @@ function Nav() {
           <ToMainTop>
             <ArrowUp size={28} onClick={scrollToTop} />
           </ToMainTop>
-          <ToBooking
-            isActive={isActive}
-            onClick={() => {
-              navigate('/booking');
-            }}
-          >
-            예매하기
-          </ToBooking>
+          {currentPage !== '/booking' && currentPage !== '/signin' ? (
+            <ToBooking
+              isActive={isActive}
+              onClick={() => {
+                navigate('/booking');
+              }}
+            >
+              예매하기
+            </ToBooking>
+          ) : null}
         </FixedBtn>
       ) : null}
     </>
@@ -74,6 +78,7 @@ const NavContainer = styled.div`
   top: 0;
   width: 100%;
   background: white;
+  z-index: 1000;
 `;
 
 const NavWrap = styled.div`
@@ -102,6 +107,7 @@ const ToMainTop = styled.div`
   left: 75px;
   width: 48px;
   height: 48px;
+  background-color: #f5f8fa;
   border: 1px solid #252525;
   border-radius: 50%;
   box-shadow: 1px 3px 6px 0 rgb(0 0 0 / 30%);
