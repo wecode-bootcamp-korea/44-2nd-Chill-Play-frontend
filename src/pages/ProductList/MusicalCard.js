@@ -2,16 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MusicalCard = ({ item }) => {
-  const bookingRate =
-    (item.booking_rating_name / item.booking_rating_total) * 100;
-
   const ratedAge = age => {
     const ageRate = {
-      4: '18',
-      3: '15',
-      2: '12',
+      18: '18',
+      15: '15',
+      12: '12',
     };
     return ageRate[age] || 'All';
+  };
+
+  const compareDate = day => {
+    const nowTime = new Date();
+    const nowMonth = nowTime.getMonth() + 1;
+    const nowDate = nowTime.getDate();
+    const musicalDate = Number(day.substring(8, 10));
+    const musicalMonth = Number(day.substring(5, 7));
+    let dDay = 0;
+
+    if (nowMonth < musicalMonth) {
+      if (nowMonth === 2) {
+        dDay = 28 - nowDate + musicalDate;
+      } else if (nowMonth === 4 || 6 || 9 || 11) {
+        dDay = 30 - nowDate + musicalDate;
+      } else {
+        dDay = 31 - nowDate + musicalDate;
+      }
+    } else {
+      dDay = musicalDate - nowDate;
+    }
+    if (dDay > 0) {
+      return 'D-' + dDay;
+    } else {
+      return '상영중';
+    }
   };
 
   return (
@@ -20,26 +43,26 @@ const MusicalCard = ({ item }) => {
         <RankImage>
           <MusicalRank rank={item.id}>No.{item.id}</MusicalRank>
           <Thumbnail>
-            <img src={item.post_image_url} alt="뮤지컬 포스터" />
-            <FilmRating limit={item.age_rated_id}>
-              {ratedAge(item.age_rated_id)}
+            <img src={item.postImageUrl} alt="뮤지컬 포스터" />
+            <FilmRating limit={item.ageRated}>
+              {ratedAge(item.ageRated)}
             </FilmRating>
           </Thumbnail>
         </RankImage>
         <CardContent>
           <div>
-            <a>{item.name}</a>
+            <a>{item.musicalName}</a>
           </div>
           <div>
             <Rating>
               예매율
-              <span>{bookingRate.toFixed(1)}%</span>
+              <span>{item.reservationRated}%</span>
             </Rating>
           </div>
           <Release>
-            <strong>{item.released_date}</strong>
+            <strong>{item.releasedDate}</strong>
             <span>개봉</span>
-            <em>D-1</em>
+            <em>{compareDate(item.releasedDate)}</em>
           </Release>
         </CardContent>
         <BookingBtn>예매하기</BookingBtn>
@@ -118,9 +141,9 @@ const FilmRating = styled.i`
   left: 5px;
   background-color: ${({ limit }) => {
     const ageLimit = {
-      4: '#FF0363',
-      3: '#F48131',
-      2: '#F5C951',
+      18: '#FF0363',
+      15: '#F48131',
+      12: '#F5C951',
     };
     return ageLimit[limit] || '#36C640';
   }};

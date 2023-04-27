@@ -7,21 +7,33 @@ import { API } from '../../config';
 
 function ProductList() {
   const [lists, setLists] = useState([]);
-  const [select, setSelect] = useState('');
+  const [select, setSelect] = useState('reservationRated-DESC');
+  const [nowInTheaters, setNowInTheaters] = useState(false);
+  const commingSoon = nowInTheaters ? '&where=comingsoon' : '';
 
   const handleSelect = e => {
     setSelect(e.target.value);
   };
+  const handleCheck = e => {
+    setNowInTheaters(prev => !prev);
+  };
   useEffect(() => {
-    fetch('/data/list.json', {
+    fetch(`${API.productList}?sort=${select}${commingSoon}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
       },
     })
       .then(res => res.json())
-      .then(data => setLists(data));
-  }, []);
+      .then(data => {
+        // 모든 공연 작품을 포함하는 경우, 각 객체에 id 속성을 추가합니다.
+        const musicalList = data.map((musical, i) => {
+          musical.id = i + 1;
+          return musical;
+        });
+        setLists(musicalList);
+      });
+  }, [select, nowInTheaters]);
 
   return (
     <MusicalListWrap>
@@ -30,17 +42,17 @@ function ProductList() {
       </ListTitle>
       <SortTitle>
         <NowShow>
-          <input type="checkbox" id="nowshowCheck" />
-          <span>현재 상영작만 보기</span>
+          <input type="checkbox" id="nowshowCheck" onChange={handleCheck} />
+          <span>상영 예정작만 보기</span>
         </NowShow>
         <SortType>
           <select id="SortType" name="SortType" onChange={handleSelect}>
-            <option value="" selected>
+            <option value="reservationRated-DESC" selected>
               예매율순
             </option>
-            <option value="ageRateASC">연령별</option>
-            <option value="releasedDateASC">개봉일 오름차순</option>
-            <option value="releaseDateDESC">개봉일 내림차순</option>
+            <option value="ageRated-ASC">연령별</option>
+            <option value="releasedDate-ASC">개봉일 오름차순</option>
+            <option value="releasedDate-DESC">개봉일 내림차순</option>
           </select>
           <button>Go</button>
         </SortType>
@@ -60,11 +72,11 @@ const MusicalChart = styled.div`
 
   ol {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;
+    gap: 18.6px;
   }
 `;
 
