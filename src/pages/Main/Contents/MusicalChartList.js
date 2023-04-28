@@ -117,7 +117,9 @@ const ChartNum = styled.h3`
 `;
 
 const Poster = styled.img`
-  width: 260px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
 `;
 
 const TitleWrap = styled.div`

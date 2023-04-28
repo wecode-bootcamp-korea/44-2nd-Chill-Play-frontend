@@ -125,7 +125,7 @@ const HEADER_MENU_LIST = [
   },
   {
     id: 2,
-    path: '',
+    path: '/my',
     Text: 'My Muse',
     icon: <User size={24} />,
   },

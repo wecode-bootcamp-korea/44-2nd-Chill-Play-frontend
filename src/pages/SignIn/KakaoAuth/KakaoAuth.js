@@ -31,6 +31,7 @@ function KakaoAuth() {
             .then(result => {
               if (result.token) {
                 localStorage.setItem('TOKEN', result.token);
+                localStorage.setItem('NICKNAME', result.nickname);
                 alert('로그인 성공했어요!');
                 navigate('/');
               }
