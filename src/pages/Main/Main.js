@@ -5,6 +5,7 @@ import Benefits from './Contents/Benefits';
 import Theater from './Contents/Theater';
 import Curation from './Contents/Curation';
 import MusicalChartList from './Contents/MusicalChartList';
+import { API } from '../../config';
 
 function Main() {
   const [mainMusicalData, setMainMusicalData] = useState([]);
