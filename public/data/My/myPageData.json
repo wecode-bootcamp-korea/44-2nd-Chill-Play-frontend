@@ -1,0 +1,46 @@
+[
+  {
+    "profileImage": "https://media.istockphoto.com/id/1214326150/photo/programmer-dog-coding-with-laptop.jpg?s=612x612&w=0&k=20&c=UgeF1KkN6MaMNimNb4F7iHQr79ONYcl5ak0PSaEYOgs=",
+    "purchasedMusicals": [
+      {
+        "personnel": 4,
+        "purchasedDate": "2023-04-04",
+        "musicalName": "오페라의 유령",
+        "theatersName": "예술의 전당 오페라극장",
+        "totalAmount": 300000,
+        "orderNumber": "askl;fhlak",
+        "musicalImage": "https://pics.filmaffinity.com/La_La_Land-262021831-large.jpg",
+        "musicalDate": "2023-04-10",
+        "musicalTime": "20:10",
+        "endTime": "22:45",
+        "seatInfo": ["B3", "B4", "D6", "D7"]
+      },
+      {
+        "personnel": 8,
+        "purchasedDate": "2023-04-05",
+        "musicalName": "라만차차차",
+        "theatersName": "예술의 전당 오페라극장",
+        "totalAmount": 3000000,
+        "orderNumber": "askl;fhlak",
+        "musicalImage": "https://pics.filmaffinity.com/La_La_Land-262021831-large.jpg",
+        "musicalDate": "2023-04-10",
+        "musicalTime": "20:10",
+        "endTime": "22:45",
+        "seatInfo": ["B3", "B4", "D6", "D7"]
+      },
+      {
+        "personnel": 7,
+        "purchasedDate": "2023-04-06",
+        "musicalName": "야호 잘나온다",
+        "theatersName": "예술의 전당 오페라극장",
+        "totalAmount": 345000,
+        "orderNumber": "askl;fhlak",
+        "musicalImage": "https://pics.filmaffinity.com/La_La_Land-262021831-large.jpg",
+        "musicalDate": "2023-04-10",
+        "musicalTime": "20:10",
+        "endTime": "22:45",
+        "seatInfo": ["B3", "B4", "D6", "D7"]
+      }
+    ]
+  }
+]

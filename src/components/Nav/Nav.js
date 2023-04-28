@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 import NavHeader from './NavHeader';
 import Navigation from './Navigation';
+import ChatService from './ChatService';
 import { ArrowUp } from 'react-feather';
 const CHANGE_NAV_COLOR_THEME = 150;
 
@@ -40,11 +41,13 @@ function Nav() {
       <HeaderWrap>
         <NavHeader />
       </HeaderWrap>
+      {currentPage === '/' && <ChatService />}
       <NavContainer ref={targetRef}>
         <NavWrap>
           <Navigation isActive={isActive} />
         </NavWrap>
       </NavContainer>
+
       {isActive ? (
         <FixedBtn>
           <ToMainTop>
