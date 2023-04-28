@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ContentBody from './ContentBody';
 import { API } from '../../config';
+import Review from './Review';
+
 function ProductDetail() {
   const [musicalData, setMusicalData] = useState({});
   const [musicalBanner, setMusicalBanner] = useState([]);
@@ -100,6 +102,7 @@ function ProductDetail() {
               </TicketBtn>
             </ContentsTop>
             <ContentBody musicalData={musicalData} />
+            <Review musicalId={musicalData.musicalId} />
           </Content>
         </>
       )}

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 function MusicalChartList({ item, index }) {
   const [onPoster, setOnPoster] = useState(false);
+  const navigate = useNavigate();
 
   function onHover() {
     setOnPoster(true);
@@ -20,6 +21,11 @@ function MusicalChartList({ item, index }) {
       return item.ageRated;
     }
   }
+
+  function goToBooking() {
+    navigate(`/booking`, { state: item });
+  }
+
   if (index < 5) {
     return (
       <MusicalItem onMouseEnter={onHover} onMouseLeave={removeHover}>
@@ -31,11 +37,11 @@ function MusicalChartList({ item, index }) {
             <HoverView>
               <TicketBtnWrap>
                 <Link key={item.musicalId} to="/booking" state={item}>
-                  <TicketBtn>예매하기</TicketBtn>
+                  <TicketBtn onClick={goToBooking}>예매하기</TicketBtn>
                 </Link>
                 <Link
                   key={item.musicalId}
-                  to={`/productdetail/${item.musicalId}`}
+                  to={`/productdetail/detail/${item.musicalId}`}
                 >
                   <TicketBtn>상세정보</TicketBtn>
                 </Link>
