@@ -24,7 +24,7 @@ function TheatreItem({ handleDynamicFetch, id, image, name, description }) {
   };
 
   const handleTheatreClick = () => {
-    handleDynamicFetch('theatreId', id);
+    handleDynamicFetch('theater', id);
     updateTheatre({
       id,
       name,

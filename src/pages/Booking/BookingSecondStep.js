@@ -4,20 +4,23 @@ import BookSeats from './SeatBooking/BookSeats';
 import SelectedMusicalInfo from './SeatBooking/SelectedMusicalInfo';
 import Counter from './SeatBooking/Counter';
 import SelectedSeatsInfo from './SeatBooking/SelectedSeatsInfo';
+import { useBookingStore } from './store/store';
+import { API } from '../../config';
 
 function BookingSecondStep() {
   const [ticketCount, setTicketCount] = useState(1);
   const [bookedSeatsData, setBookedSeatsData] = useState({});
+  const selectedSchedule = useBookingStore(
+    state => state.bookingState.selectedTime
+  );
 
   useEffect(() => {
-    fetch('/data/booking/musicalItemData.json', {
+    fetch(`${API.seatSelection}${selectedSchedule.id}`, {
       method: 'GET',
       'Content-Type': 'application/json',
     })
       .then(response => response.json())
-      .then(result => {
-        setBookedSeatsData(result[3].bookedSeatsData);
-      });
+      .then(result => setBookedSeatsData(result));
   }, []);
 
   return (
