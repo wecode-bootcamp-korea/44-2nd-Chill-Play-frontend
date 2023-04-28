@@ -26,7 +26,7 @@ function TimeItem({
   };
 
   const handleTimeClick = () => {
-    handleDynamicFetch('musicalScheduleId', id);
+    handleDynamicFetch('musicalSchedule', id);
     updateTimeInfo({ id, name, time, endTime });
   };
 

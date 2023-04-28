@@ -6,4 +6,6 @@ export const API = {
   productList: `${BASE_URL}/musicals`,
   productDetail: `${BASE_URL}/musicals/detail`,
   navigationSearch: `${BASE_URL}/musicals/search`,
+  musicalBooking: `${BASE_URL}/ticketing`,
+  seatSelection: `${BASE_URL}/seat/`,
 };

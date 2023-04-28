@@ -7,13 +7,18 @@ function SelectedMusicalInfo() {
   const bookingState = useBookingStore(state => state.bookingState);
   const { selectedMusical, selectedTheatre, selectedDate, selectedTime } =
     bookingState;
+  const ageLimit = {
+    18: 18,
+    15: 15,
+    12: 12,
+  };
   return (
     <MusicalInfoContainer>
       <MusicalThumb imageUrl={selectedMusical?.image} />
       <MusicalTextContent>
         <MusicalHeader>
           <AgeLimit ageLimit={selectedMusical?.ageLimit}>
-            {selectedMusical?.ageLimit}
+            {ageLimit[selectedMusical?.ageLimit] || 'All'}
           </AgeLimit>
           <Title>{selectedMusical?.title}</Title>
         </MusicalHeader>

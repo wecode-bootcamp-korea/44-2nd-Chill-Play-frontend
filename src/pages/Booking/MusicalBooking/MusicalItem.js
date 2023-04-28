@@ -33,7 +33,7 @@ function MusicalItem({
   };
 
   const handleMusicalClick = () => {
-    handleDynamicFetch('musicalId', id);
+    handleDynamicFetch('musical', id);
     updateSelectedMusical({ id, image, title, ageLimit });
   };
 

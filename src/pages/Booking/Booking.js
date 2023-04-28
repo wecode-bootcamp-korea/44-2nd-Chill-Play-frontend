@@ -8,6 +8,7 @@ import BookingProgress from './MusicalBooking/BookingProgress/BookingProgress';
 import BookingFirstStep from './BookingFirstStep';
 import BookingSecondStep from './BookingSecondStep';
 import { format } from 'date-fns';
+import { API } from '../../config';
 
 function Booking() {
   const [bookingPageData, setBookingPageData] = useState([]);
@@ -29,7 +30,7 @@ function Booking() {
   let queryString = location.search;
 
   useEffect(() => {
-    fetch(`/data/booking/newBookingData${queryString}.json`, {
+    fetch(`${API.musicalBooking}${queryString}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -47,19 +48,19 @@ function Booking() {
 
   const handleDynamicFetch = (paramToSet, queryValue) => {
     const obj = {
-      musicalId: (paramToSet, queryValue) => {
-        searchParams.delete('theatreId');
+      musical: (paramToSet, queryValue) => {
+        searchParams.delete('theater');
         searchParams.delete('date');
-        searchParams.delete('musicalScheduleId');
+        searchParams.delete('musicalSchedule');
         setTheatre(null);
         setTime(null);
 
         searchParams.set(paramToSet, queryValue);
         setSearchParams(searchParams);
       },
-      theatreId: (paramToSet, queryValue) => {
+      theater: (paramToSet, queryValue) => {
         searchParams.delete('date');
-        searchParams.delete('musicalScheduleId');
+        searchParams.delete('musicalSchedule');
         setTime(null);
 
         searchParams.set(paramToSet, queryValue);
@@ -67,14 +68,14 @@ function Booking() {
         setSearchParams(searchParams);
       },
       date: (paramToSet, clickedDay) => {
-        searchParams.delete('musicalScheduleId');
+        searchParams.delete('musicalSchedule');
         setTime(null);
 
         searchParams.set(paramToSet, format(clickedDay, 'yyyy-MM-dd'));
         setSearchParams(searchParams);
       },
-      musicalScheduleId: (paramToSet, queryValue) => {
-        searchParams.set('musicalScheduleId', queryValue);
+      musicalSchedule: (paramToSet, queryValue) => {
+        searchParams.set('musicalSchedule', queryValue);
         setSearchParams(searchParams);
       },
     };

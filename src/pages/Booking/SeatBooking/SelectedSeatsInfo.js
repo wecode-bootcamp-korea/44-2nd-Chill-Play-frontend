@@ -55,7 +55,7 @@ function SelectedSeatsInfo({ vipPrice, regPrice }) {
 
           <TotalPrice>
             <div>총&nbsp;&nbsp;</div>
-            {(totalVipPrice + totalRegPrice).toLocaleString()}&nbsp;
+            {(totalVipPrice + totalRegPrice)?.toLocaleString()}&nbsp;
             <span>원</span>
           </TotalPrice>
         </SeatsAndPriceContainer>
