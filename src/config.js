@@ -8,4 +8,5 @@ export const API = {
   navigationSearch: `${BASE_URL}/musicals/search`,
   musicalBooking: `${BASE_URL}/ticketing`,
   seatSelection: `${BASE_URL}/seat/`,
+  payment: `${BASE_URL}/orders`,
 };

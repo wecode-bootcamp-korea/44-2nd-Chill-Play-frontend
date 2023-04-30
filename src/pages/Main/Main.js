@@ -15,7 +15,7 @@ function Main() {
     })
       .then(response => response.json())
       .then(result => setMainMusicalData(result));
-  });
+  }, []);
 
   return (
     <div>

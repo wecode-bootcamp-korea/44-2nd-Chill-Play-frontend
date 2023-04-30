@@ -1,0 +1,23 @@
+{
+  "totalAmount": 460000,
+  "selectedData": "2023-05-04",
+  "selectedMusical": {
+    "id": 1,
+    "ageLimit": 12,
+    "image": "https://ticketimage.interpark.com/Play/image/large/23/23002291_p.gif",
+    "title": "데스노트"
+  },
+  "selectedSeats": {
+    "numberOfSeats": 4,
+    "seatValues": ["E3", "E4", "C7", "C6"]
+  },
+  "selectedTheatre": {
+    "id": 1,
+    "name": "샤롯테 씨어터"
+  },
+  "selectedTime": {
+    "id": 3,
+    "endTime": "21:50:00",
+    "time": "19:00:00"
+  }
+}
