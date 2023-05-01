@@ -1,9 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import backgroundImg from '../../assets/images/backimg.png';
+import logo from '../../assets/images/muse-logo-white-3x.png';
 
 const FooterWrap = styled.div`
   width: 100%;
-  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url(${backgroundImg});
+  background-size: cover;
+  background-repeat: no-repeat;
+`;
+
+const FooterLogo = styled.div`
+  width: 980px;
+  display: flex;
+  align-items: left;
+  margin: 20px auto;
+  cursor: pointer;
+
+  div {
+    display: block;
+    float: center;
+    width: 120px;
+    height: 49px;
+    margin-right: 10px;
+    background-image: url(${logo});
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 `;
 
 const FooterService = styled.div`
@@ -20,8 +46,9 @@ const ServiceList = styled.ul`
 
   li {
     font-weight: 500;
-    font-size: 13px;
-    color: #666;
+    font-size: 14px;
+    color: #ffffff;
+
     &:hover {
       text-decoration: underline;
       cursor: pointer;
@@ -34,13 +61,15 @@ const CompanyInfo = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 12px;
   width: 980px;
   margin: 0 auto;
 
   p {
-    color: #666;
-    line-height: 0.5;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.7;
+    line-height: 0.1;
     font-style: normal;
   }
 `;
@@ -48,6 +77,9 @@ const CompanyInfo = styled.div`
 function Footer() {
   return (
     <FooterWrap>
+      <FooterLogo>
+        <div />
+      </FooterLogo>
       <FooterService>
         <ServiceList>
           {SERVICE_MENUS.map(menu => {

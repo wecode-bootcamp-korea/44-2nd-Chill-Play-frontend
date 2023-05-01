@@ -41,7 +41,7 @@ export const MAIN_BENEFITS = [
   {
     id: 1,
     image:
-      'https://img.megabox.co.kr/SharedImg/BnftMng/2023/04/03/bM5tP9wWWC5YwIRw5TOmw7I3DZTxXktu.png',
+      'https://i.pinimg.com/564x/6a/71/77/6a717722f4b6ba63d015224411dfe450.jpg',
     title: `ORIGINAL \nTICKET No.1`,
     text: '뮤즈 오리지널 티켓',
     description: '뮤즈에서 제안하는 <캣츠> 보기!',
@@ -49,7 +49,7 @@ export const MAIN_BENEFITS = [
   {
     id: 2,
     image:
-      'https://i.pinimg.com/564x/ca/d4/80/cad4804c1f268d45439de111f532b0db.jpg',
+      'https://i.pinimg.com/564x/7c/db/8a/7cdb8a1b0ad7627ffd4e78467d3e830c.jpg',
     title: '뮤즈의 특가 프로모션',
     text: '뮤즈의 이벤트',
     description: '뮤즈에서 뮤지컬 잘 간직하는 방법!',
@@ -57,7 +57,7 @@ export const MAIN_BENEFITS = [
   {
     id: 3,
     image:
-      'https://i.pinimg.com/564x/ff/a0/60/ffa0602ed2c8dd6021181e3bf878d829.jpg',
+      'https://i.pinimg.com/564x/92/97/93/929793c3646371bb0a223cce8139ddb9.jpg',
     title: '뮤즈 X 슈퍼클로젯',
     text: '<슈퍼클로젯> 굿즈 스토어',
     description: '문화생활은 뮤즈에서',
@@ -93,12 +93,12 @@ export const CURATION_DATA = [
     id: 1,
     src: 'https://images.unsplash.com/photo-1503095396549-807759245b35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2942&q=80',
     subtitle: '#클래식소사이어티',
-    title: 'Muse 뮤지컬 투란도트',
-    description: `푸치니의 마지막 오페라 명작, 투란도트
+    title: '오페라의 유령',
+    description: `로맨틱하고 아름다운 음악이 매력적인 고전 뮤지컬
 역대 가장 화려한 시즌, 로열 오페라 하우스 라이브 시네마 2022/23\n
 [상영 정보]\n
-상영지점 : 블루스퀘어
-상영일정 : 2023년 4월 24일(월) ~ 5월 8일(월)
+상영지점 : 블루스퀘어 신한카드 홀
+상영일정 : 2023년 05월 04일(목) ~ 07월 08일(일)
 러닝타임 : 155분`,
   },
   {

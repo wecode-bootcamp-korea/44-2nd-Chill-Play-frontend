@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Lock, Unlock, UserPlus, User, Headphones } from 'react-feather';
+import logo from '../../assets/images/muse-logo-theme-3x.png';
 
 function NavHeader() {
   const [currentLogin, setCurrentLogin] = useState(false);
@@ -20,10 +21,10 @@ function NavHeader() {
           navigate('/');
         }}
       >
-        <img src="/images/muse-logo-theme.png" alt="Muse Logo" />
+        <div />
         <span>
           당신의
-          <span style={{ color: '#6200EE', fontWeight: '400' }}>뮤즈</span>를
+          <span style={{ color: '#6200EE', fontWeight: '400' }}> 뮤즈</span>를
           찾으세요
         </span>
       </HeaderTitle>
@@ -69,21 +70,25 @@ const HeaderContent = styled.div`
 const HeaderTitle = styled.div`
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   cursor: pointer;
 
-  img {
+  div {
     display: block;
     float: left;
-    height: 100%;
+    width: 120px;
+    height: 49px;
     margin-right: 10px;
+    background-image: url(${logo});
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
   span {
     font-weight: 300;
     font-size: 14px;
     margin-top: 5px;
-    margin-left: 10px;
     color: #212124;
   }
 `;
@@ -104,6 +109,10 @@ const HeaderItem = styled.li`
   position: relative;
   padding-bottom: 19px;
   cursor: pointer;
+
+  a {
+    text-decoration: none !important;
+  }
 
   span {
     position: absolute;
