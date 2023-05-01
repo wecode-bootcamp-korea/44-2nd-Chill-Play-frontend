@@ -35,6 +35,7 @@ function MusicalChartList({ item, index }) {
           <Poster src={item.postImageUrl} alt="포스터" />
           {onPoster && (
             <HoverView>
+              <HoverViewDim />
               <TicketBtnWrap>
                 <Link key={item.musicalId} to="/booking" state={item}>
                   <TicketBtn onClick={goToBooking}>예매하기</TicketBtn>
@@ -73,12 +74,12 @@ const MusicalItem = styled.div`
 
 const PosterWrap = styled.div`
   position: relative;
+  width: 260px;
   height: 346px;
   margin-left: auto;
   margin-bottom: 16px;
-  border: 1px solid #333333;
-  border-radius: 12px;
-  overflow-y: hidden;
+  border-radius: 8px;
+  overflow: hidden;
 `;
 
 const ageRatedColor = {
@@ -153,23 +154,26 @@ const HoverView = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  text-align: center;
+`;
+
+const HoverViewDim = styled.div`
+  width: 260px;
+  height: 346px;
+  background-color: #000000;
+  opacity: 60%;
 `;
 
 const TicketBtnWrap = styled.div`
-  display: table-cell;
-  vertical-align: middle;
-  height: 346px;
-  border-radius: 12px;
-  background-color: #000000;
-  opacity: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -25%);
 `;
 
 const TicketBtn = styled.button`
   width: 200px;
-  margin: 5px;
+  margin: 5px 30px;
   border: 1px solid #ffffff;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 8px 24px;
   background-color: rgba(000, 000, 000, 00);
   font-size: 16px;
@@ -177,7 +181,8 @@ const TicketBtn = styled.button`
   cursor: pointer;
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.primary.main};
+    background-color: #ffffff;
     color: ${({ theme }) => theme.colors.primary.main};
+    transition: all 0.2s;
   }
 `;

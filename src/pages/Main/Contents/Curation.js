@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import useScrollFadeIn from './useScrollFadeIn';
 import { CURATION_DATA } from './data/MainContentsData';
@@ -9,12 +10,15 @@ function Curation() {
       <BackgroundColor />
       <CurationWrap>
         <ContentsTitle>큐레이션</ContentsTitle>
-        <CardWrap {...useScrollFadeIn('up', 0.5, 0)}>
+        <CardWrap {...useScrollFadeIn('up', 0.3, 0)}>
           <CardMain>
             <CardMainImg>
               <img src={CURATION_DATA[0].src} alt="뮤지컬작품" />
-              <button>상세</button>
-              <button>예매</button>
+              <Link to="/booking">
+                <button>
+                  <strong>{`' ${CURATION_DATA[0].title} '`}</strong> 예매하기
+                </button>
+              </Link>
             </CardMainImg>
             <CardMainText>
               <h5>{CURATION_DATA[0].subtitle}</h5>
@@ -26,15 +30,12 @@ function Curation() {
           <CardSub>
             <li>
               <img src={CURATION_DATA[1].src} alt="뮤지컬작품" />
-              <p>{CURATION_DATA[1].title}</p>
             </li>
             <li>
               <img src={CURATION_DATA[2].src} alt="뮤지컬작품" />
-              <p>{CURATION_DATA[2].title}</p>
             </li>
             <li>
               <img src={CURATION_DATA[3].src} alt="뮤지컬작품" />
-              <p>{CURATION_DATA[3].title}</p>
             </li>
           </CardSub>
         </CardWrap>
@@ -97,20 +98,15 @@ const CardMainImg = styled.div`
   }
 
   button {
-    width: 190px;
-    margin: 25px 5px;
-    border: 1px solid #ffffff;
+    width: 100%;
+    margin-top: 30px;
     border-radius: 8px;
-    padding: 16px 24px;
-    background-color: rgba(000, 000, 000, 00);
+    padding: 24px;
+    border: none;
+    background-color: ${props => props.theme.colors.primary.main};
     font-size: 20px;
     color: #ffffff;
     cursor: pointer;
-
-    &:last-child {
-      border: none;
-      background-color: ${props => props.theme.colors.primary.main};
-    }
   }
 `;
 
@@ -173,13 +169,6 @@ const CardSub = styled.ul`
       border-radius: 12px;
       object-fit: cover;
       filter: drop-shadow(4px 1px 8px rgba(0, 0, 0, 0.5));
-    }
-
-    p {
-      font-size: 18px;
-      font-weight: 500;
-      color: #ffffff;
-      white-space: pre-wrap;
     }
   }
 `;

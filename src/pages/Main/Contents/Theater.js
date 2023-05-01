@@ -7,7 +7,7 @@ function Theater() {
   return (
     <TheaterContents>
       <ContentsTitle>극장 안내</ContentsTitle>
-      <TheaterList {...useScrollFadeIn('up', 0.5, 0)}>
+      <TheaterList {...useScrollFadeIn('up', 0.1, 0)}>
         {MAIN_THEATER.map(theater => (
           <TheaterItem imgUrl={theater.image} key={theater.id}>
             <h4>{theater.theater}</h4>
@@ -24,7 +24,7 @@ const TheaterContents = styled.div`
   width: 1080px;
   margin: auto;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 240px;
 `;
 
 const ContentsTitle = styled.h2`

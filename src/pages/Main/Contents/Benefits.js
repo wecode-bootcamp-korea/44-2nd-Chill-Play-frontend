@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ChevronLeft, ChevronRight } from 'react-feather';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import useScrollFadeIn from './useScrollFadeIn';
 import { MAIN_BENEFITS, MAIN_BENEFITS_CARD } from './data/MainContentsData';
-import { Autoplay, EffectFade } from 'swiper';
+import { Navigation, Autoplay, EffectFade } from 'swiper';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,18 +18,34 @@ function Benefits() {
       <BackgroundColor />
       <BenefitWrap>
         <ContentsTitle>혜택</ContentsTitle>
+        <EventCard {...useScrollFadeIn('up', 0.2, 0)}>
+          {MAIN_BENEFITS_CARD.map(card => (
+            <Card key={card.id}>
+              <img src={card.image} alt="키드뉴스" />
+              <CardDim />
+              <CardText>
+                <h5>{card.title}</h5>
+                <p>{card.text}</p>
+              </CardText>
+            </Card>
+          ))}
+        </EventCard>
         <Swiper
           style={{
             width: '700px',
             height: '440px',
             marginLeft: '0px',
           }}
-          modules={[Autoplay, EffectFade]}
+          modules={[Autoplay, EffectFade, Navigation]}
           effect="fade"
           spaceBetween={0}
           slidesPerView={1}
+          navigation={{
+            prevEl: '.slidePrev-btn',
+            nextEl: '.slideNext-btn',
+          }}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 10000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           loop={true}
         >
           <SlideBenefitsWrap>
@@ -44,19 +62,15 @@ function Benefits() {
               </SwiperSlide>
             ))}
           </SlideBenefitsWrap>
+          <ArrowWrap>
+            <Arrow className="slidePrev-btn">
+              <ChevronLeft size={20} />
+            </Arrow>
+            <Arrow className="slideNext-btn">
+              <ChevronRight size={20} />
+            </Arrow>
+          </ArrowWrap>
         </Swiper>
-        <EventCard {...useScrollFadeIn('up', 0.5, 0)}>
-          {MAIN_BENEFITS_CARD.map(card => (
-            <Card key={card.id}>
-              <img src={card.image} alt="키드뉴스" />
-              <CardDim />
-              <CardText>
-                <h5>{card.title}</h5>
-                <p>{card.text}</p>
-              </CardText>
-            </Card>
-          ))}
-        </EventCard>
       </BenefitWrap>
     </BenefitContents>
   );
@@ -107,20 +121,22 @@ const SlideBenefitsBg = styled.div`
   width: 700px;
   height: 360px;
   background-color: #ffffff;
+  overflow-y: hidden;
 `;
 
 const SlideBenefitsImg = styled.img`
   position: absolute;
-  right: 0;
-  bottom: -40px;
-  width: 400px;
-  height: 400px;
+  right: 20px;
+  top: 50px;
+  width: 420px;
+  height: 420px;
+  object-position: top right;
   object-fit: contain;
 `;
 
 const SlideBenefitsText = styled.div`
   position: absolute;
-  top: 50px;
+  top: 80px;
   left: 20px;
   width: 280px;
   transition: all 0.5;
@@ -128,7 +144,7 @@ const SlideBenefitsText = styled.div`
 
   h3 {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 32px;
     font-weight: 700;
     color: ${props => props.theme.colors.primary.dark};
@@ -141,9 +157,9 @@ const SlideBenefitsText = styled.div`
   }
 
   p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    color: #999999;
+    color: #666;
   }
 `;
 
@@ -155,25 +171,24 @@ const EventCard = styled.div`
   left: 0;
   bottom: 0;
   width: 1100px;
-  height: 540px;
   z-index: 3;
 `;
 
 const Card = styled.div`
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   white-space: pre-wrap;
   filter: drop-shadow(8px 1px 12px rgba(35, 21, 56, 0.15));
 
   &:nth-child(2) {
-    width: 440px;
-    height: 260px;
+    width: 480px;
+    height: 220px;
   }
 
   &:last-child {
     width: 360px;
-    height: 540px;
+    height: 480px;
   }
 
   img {
@@ -210,4 +225,30 @@ const CardDim = styled.div`
   bottom: 0;
   border-radius: 12px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0));
+`;
+
+const ArrowWrap = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 25px;
+  left: 10px;
+  z-index: 10;
+  border-radius: 50%;
+  padding: 5px;
+  transition: background-color 0.3s;
+`;
+
+const Arrow = styled.span`
+  height: 20px;
+  width: 20px;
+  color: #000000;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    color: ${props => props.theme.colors.primary.main};
+  }
 `;
