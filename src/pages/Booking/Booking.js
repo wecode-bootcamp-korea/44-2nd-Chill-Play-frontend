@@ -12,22 +12,30 @@ import { API } from '../../config';
 
 function Booking() {
   const [bookingPageData, setBookingPageData] = useState([]);
-  const [bookingState, selectedDate, setTheatre, setTime, resetStore] =
-    useBookingStore(
-      state => [
-        state.bookingState,
-        state.bookingState.selectedDate,
-        state.setTheatre,
-        state.setTime,
-        state.reset,
-      ],
-      shallow
-    );
+  const [
+    bookingState,
+    selectedDate,
+    setMusical,
+    setTheatre,
+    setTime,
+    resetStore,
+  ] = useBookingStore(
+    state => [
+      state.bookingState,
+      state.bookingState.selectedDate,
+      state.setMusical,
+      state.setTheatre,
+      state.setTime,
+      state.reset,
+    ],
+    shallow
+  );
   const [searchParams, setSearchParams] = useSearchParams();
   const [seatSelectionStage, setSeatSelectionStage] = useState(false);
 
   const location = useLocation();
   let queryString = location.search;
+  let receivedState = location.state;
 
   useEffect(() => {
     fetch(`${API.musicalBooking}${queryString}`, {
@@ -39,6 +47,19 @@ function Booking() {
       .then(response => response.json())
       .then(json => setBookingPageData(json));
   }, [queryString]);
+
+  useEffect(() => {
+    if (receivedState) {
+      console.log(receivedState);
+      handleDynamicFetch('musicalId', receivedState.musicalId);
+      setMusical({
+        id: receivedState.musicalId,
+        image: receivedState.postImageUrl,
+        title: receivedState.musicalName,
+        ageLimit: receivedState.ageRated,
+      });
+    }
+  }, []);
 
   const handleResetClick = () => {
     setSearchParams([]);
@@ -105,6 +126,7 @@ function Booking() {
           <BookingFirstStep
             handleDynamicFetch={handleDynamicFetch}
             bookingPageData={bookingPageData}
+            receivedState={receivedState}
           />
         )}
         <BookingProgress

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import MusicalItem from './MusicalBooking/MusicalItem';
 import TheatreItem from './MusicalBooking/TheatreItem';
@@ -6,16 +6,37 @@ import Calendar from './MusicalBooking/Calendar/Calendar';
 import TimeItem from './MusicalBooking/TimeItem';
 import { useBookingStore } from './store/store';
 
-function BookingFirstStep({ handleDynamicFetch, bookingPageData }) {
+function BookingFirstStep({
+  handleDynamicFetch,
+  bookingPageData,
+  receivedState,
+}) {
   const bookingState = useBookingStore(state => state.bookingState);
   const { selectedMusical, selectedTheatre, selectedDate, selectedTime } =
     bookingState;
+
+  const stepBodyRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedMusical && stepBodyRef.current) {
+      const selectedItem = bookingPageData[0]?.findIndex(
+        musical => musical.musicalId === selectedMusical.id
+      );
+      setTimeout(() => {
+        stepBodyRef?.current?.children[selectedItem]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        });
+      }, 500);
+    }
+  }, [selectedMusical, bookingPageData[0]]);
 
   return (
     <BookingStepsContainer>
       <BookingStep width="33.3">
         <StepHeader>상영중인 작품</StepHeader>
-        <StepBody $scrollable>
+        <StepBody ref={stepBodyRef} $scrollable>
           {bookingPageData[0]?.map(
             ({
               musicalId,
@@ -34,6 +55,7 @@ function BookingFirstStep({ handleDynamicFetch, bookingPageData }) {
                 ageLimit={ageLimit}
                 rate={reservationRate}
                 releasedDate={releasedDate}
+                data-id={musicalId}
               />
             )
           )}

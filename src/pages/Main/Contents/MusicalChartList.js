@@ -30,7 +30,7 @@ function MusicalChartList({ item, index }) {
           {onPoster && (
             <HoverView>
               <TicketBtnWrap>
-                <Link key={item.musicalId} to="/booking">
+                <Link key={item.musicalId} to="/booking" state={item}>
                   <TicketBtn>예매하기</TicketBtn>
                 </Link>
                 <Link
