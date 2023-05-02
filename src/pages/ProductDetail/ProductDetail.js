@@ -49,6 +49,7 @@ function ProductDetail() {
       .then(response => response.json())
       .then(result => setMusicalBanner(result));
   }, [musicalId]);
+  // console.log(musicalData);
 
   return (
     <div>

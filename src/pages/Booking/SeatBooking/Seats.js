@@ -72,6 +72,8 @@ function Seats({ values, ticketCount, bookedSeats }) {
 
   const charToIntConvertValue = 65;
 
+  console.log(bookedSeats);
+
   return (
     <SeatsGrid>
       <SeatsAlphabet>
@@ -87,7 +89,7 @@ function Seats({ values, ticketCount, bookedSeats }) {
         ))}
       </SeatsNumber>
       <SeatsRow>
-        {values.map(seat =>
+        {values?.map(seat =>
           bookedSeats?.includes(seat) ? (
             <Seat isBooked={true} isVip={checkVipSeat(seat)} key={seat}>
               {seat}

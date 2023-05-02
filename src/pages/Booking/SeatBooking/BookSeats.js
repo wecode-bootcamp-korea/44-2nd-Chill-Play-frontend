@@ -17,8 +17,6 @@ function BookSeats({ ticketCount, bookedSeats }) {
 
   const seats = createSection(10);
 
-  console.log(bookedSeats);
-
   return (
     <Seats values={seats} ticketCount={ticketCount} bookedSeats={bookedSeats} />
   );

@@ -29,16 +29,20 @@ const MusicalCard = ({ item }) => {
     const musicalMonth = Number(day.substring(5, 7));
     let dDay = 0;
 
-    if (nowMonth < musicalMonth) {
-      if (nowMonth === 2) {
-        dDay = 28 - nowDate + musicalDate;
-      } else if (nowMonth === 4 || 6 || 9 || 11) {
-        dDay = 30 - nowDate + musicalDate;
+    if (nowMonth <= musicalMonth) {
+      if (nowMonth === musicalMonth) {
+        dDay = musicalDate - nowDate;
       } else {
-        dDay = 31 - nowDate + musicalDate;
+        if (nowMonth === 2) {
+          dDay = 28 - nowDate + musicalDate;
+        } else if (nowMonth === 4 || 6 || 9 || 11) {
+          dDay = 30 - nowDate + musicalDate;
+        } else {
+          dDay = 31 - nowDate + musicalDate;
+        }
       }
     } else {
-      dDay = musicalDate - nowDate;
+      return '상영중';
     }
     if (dDay > 0) {
       return 'D-' + dDay;

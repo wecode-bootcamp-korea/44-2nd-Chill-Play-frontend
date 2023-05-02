@@ -3,25 +3,23 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import TicketSection from './TicketSection';
 import HistorySection from './HistorySection';
+import { API } from '../../config';
 
 function MyPage() {
   const [myPageData, setMyPageData] = useState([]);
   const [showHistory, setShowHistory] = useState(true);
+  const username = localStorage.getItem('username');
 
   const handleTabClick = () => {
     setShowHistory(!showHistory);
   };
 
-  const token = localStorage.getItem('token');
-
-  const username = localStorage.getItem('username');
-
   useEffect(() => {
-    fetch('http://10.58.52.144:3000/mypage/info?&limit=10', {
+    fetch(`${API.mypage}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: token,
+        Authorization: localStorage.getItem('TOKEN'),
       },
     })
       .then(response => response.json())

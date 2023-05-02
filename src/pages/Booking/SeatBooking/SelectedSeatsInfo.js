@@ -36,6 +36,8 @@ function SelectedSeatsInfo({ vipPrice, regPrice }) {
     setTotalAmount(totalVipPrice + totalRegPrice);
   }, [totalCost]);
 
+  console.log(vipPrice, regPrice);
+
   return (
     <SelectedSeatsContainer>
       <ContentWrapper>
