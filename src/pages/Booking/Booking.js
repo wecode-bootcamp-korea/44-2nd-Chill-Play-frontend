@@ -38,7 +38,7 @@ function Booking() {
   let receivedState = location.state;
 
   useEffect(() => {
-    fetch(`${API.musicalBooking}${queryString}`, {
+    fetch(`${API.ticketing}${queryString}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -50,8 +50,7 @@ function Booking() {
 
   useEffect(() => {
     if (receivedState) {
-      console.log(receivedState);
-      handleDynamicFetch('musicalId', receivedState.musicalId);
+      handleDynamicFetch('musical', receivedState.musicalId);
       setMusical({
         id: receivedState.musicalId,
         image: receivedState.postImageUrl,
@@ -102,8 +101,6 @@ function Booking() {
     };
     return obj[paramToSet](paramToSet, queryValue);
   };
-
-  console.log(bookingState);
 
   return (
     <PageContainer>
