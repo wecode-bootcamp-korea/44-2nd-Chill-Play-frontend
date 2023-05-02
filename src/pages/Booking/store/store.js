@@ -6,6 +6,7 @@ const initialState = {
   selectedDate: new Date(),
   selectedTime: null,
   selectedSeats: [],
+  totalAmount: 0,
 };
 
 export const useBookingStore = create(set => ({
@@ -52,6 +53,15 @@ export const useBookingStore = create(set => ({
       bookingState: {
         ...state.bookingState,
         selectedSeats: seatsValues,
+      },
+    }));
+  },
+  setTotalAmount: value => {
+    set(state => ({
+      ...state,
+      bookingState: {
+        ...state.bookingState,
+        totalAmount: value,
       },
     }));
   },

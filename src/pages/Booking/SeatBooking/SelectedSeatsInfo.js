@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { useBookingStore } from '../store/store';
+import { shallow } from 'zustand/shallow';
 
 function SelectedSeatsInfo({ vipPrice, regPrice }) {
-  const selectedSeats = useBookingStore(
-    state => state.bookingState.selectedSeats.seatValues
+  const [selectedSeats, setTotalAmount] = useBookingStore(
+    state => [
+      state.bookingState.selectedSeats.seatValues,
+      state.setTotalAmount,
+    ],
+    shallow
   );
   const vipSeatCount = selectedSeats?.filter(
     seat => seat.startsWith('A') || seat.startsWith('B') || seat.startsWith('C')
@@ -13,6 +18,7 @@ function SelectedSeatsInfo({ vipPrice, regPrice }) {
   const regSeatCount = selectedSeats?.length - vipSeatCount;
   const totalVipPrice = vipSeatCount * vipPrice;
   const totalRegPrice = regSeatCount * regPrice;
+  const totalCost = totalVipPrice + totalRegPrice;
 
   const checkVip = value => {
     if (
@@ -25,6 +31,10 @@ function SelectedSeatsInfo({ vipPrice, regPrice }) {
       return false;
     }
   };
+
+  useEffect(() => {
+    setTotalAmount(totalVipPrice + totalRegPrice);
+  }, [totalCost]);
 
   return (
     <SelectedSeatsContainer>
@@ -55,7 +65,7 @@ function SelectedSeatsInfo({ vipPrice, regPrice }) {
 
           <TotalPrice>
             <div>총&nbsp;&nbsp;</div>
-            {(totalVipPrice + totalRegPrice)?.toLocaleString()}&nbsp;
+            {totalCost.toLocaleString()}&nbsp;
             <span>원</span>
           </TotalPrice>
         </SeatsAndPriceContainer>

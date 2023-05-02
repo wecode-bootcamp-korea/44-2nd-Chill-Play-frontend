@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useBookingStore } from '../../store/store';
 import { ChevronRight } from 'react-feather';
@@ -22,6 +23,18 @@ function BookingProgress({ seatSelectionStage, setSeatSelectionStage }) {
     18: 18,
     15: 15,
     12: 12,
+  };
+
+  const userData = {
+    ...bookingStatus,
+    selectedDate: format(bookingStatus.selectedDate, 'yyyy-MM-dd'),
+  };
+
+  const navigate = useNavigate();
+
+  const handleMoveToPayment = () => {
+    sessionStorage.setItem('userData', JSON.stringify(userData));
+    navigate('/payment');
   };
   return (
     <BookingProgressStatusBar>
@@ -98,7 +111,11 @@ function BookingProgress({ seatSelectionStage, setSeatSelectionStage }) {
         </BookingStepsContainer>
       </div>
       <BookingButton
-        onClick={() => setSeatSelectionStage(true)}
+        onClick={
+          seatSelectionStage === true
+            ? handleMoveToPayment
+            : () => setSeatSelectionStage(true)
+        }
         isActive={firstStepsComplete ? true : false}
       >
         {seatSelectionStage ? '결제하기' : '좌석 선택하기'}
