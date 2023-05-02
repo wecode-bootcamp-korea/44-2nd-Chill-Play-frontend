@@ -1,4 +1,4 @@
-const BASE_URL = 'http://10.58.52.107:3000';
+const BASE_URL = 'http://10.58.52.166:3000';
 
 export const API = {
   kakaoLogin: `${BASE_URL}/users/kakaologin`,
@@ -6,7 +6,7 @@ export const API = {
   productList: `${BASE_URL}/musicals`,
   productDetail: `${BASE_URL}/musicals/detail`,
   navigationSearch: `${BASE_URL}/musicals/search`,
-  musicalBooking: `${BASE_URL}/ticketing`,
+  ticketing: `${BASE_URL}/ticketing`,
   seatSelection: `${BASE_URL}/seat/`,
   payment: `${BASE_URL}/orders`,
   photoReview: `${BASE_URL}/reviews`,
