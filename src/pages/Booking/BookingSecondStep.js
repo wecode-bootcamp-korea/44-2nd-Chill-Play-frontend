@@ -20,7 +20,9 @@ function BookingSecondStep() {
       'Content-Type': 'application/json',
     })
       .then(response => response.json())
-      .then(result => setBookedSeatsData(result));
+      .then(result => {
+        setBookedSeatsData(result[3]?.bookedSeatsData);
+      });
   }, []);
 
   return (

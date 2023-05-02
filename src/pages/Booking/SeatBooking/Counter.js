@@ -4,7 +4,7 @@ import { Minus, Plus } from 'react-feather';
 
 function Counter({ ticketCount, setTicketCount }) {
   const handleCounter = num => {
-    if (ticketCount + num === 0) {
+    if (ticketCount + num === 0 || ticketCount + num === 7) {
       return;
     }
     setTicketCount(ticketCount + num);
@@ -26,6 +26,10 @@ function Counter({ ticketCount, setTicketCount }) {
           <Plus />
         </Button>
       </ActualCounter>
+      <LimitInfo>
+        한번에 예약 시 <span>최대 6명</span>까지
+        <br /> 예약 가능합니다.
+      </LimitInfo>
     </CounterContainer>
   );
 }
@@ -85,5 +89,20 @@ const CounterNum = styled.div`
     margin-right: 2px;
     font-size: 26px;
     font-weight: bold;
+  }
+`;
+
+const LimitInfo = styled.div`
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+  margin-top: 10px;
+  font-size: 10px;
+  color: #e8e8e8;
+
+  span {
+    opacity: 1;
+    font-weight: 600;
+    color: #fff;
   }
 `;
