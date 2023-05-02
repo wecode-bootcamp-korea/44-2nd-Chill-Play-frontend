@@ -35,6 +35,8 @@ function ProductList() {
       });
   }, [select, nowInTheaters]);
 
+  // console.log(lists);
+
   return (
     <MusicalListWrap>
       <ListTitle>

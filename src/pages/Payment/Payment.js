@@ -10,7 +10,7 @@ const clientKey = process.env.REACT_APP_CLIENTKEY;
 function Payment() {
   const [musical, setMusical] = useState({});
   const [simplePay, setSimplePay] = useState('');
-  const [userName, setUserName] = useState('');
+  const [username, setUserName] = useState('');
   const [paymentText, setPaymentText] = useState('신용카드');
   const [isAgreeTermChecked, setAgreeTermsIsChecked] = useState(false);
   const navigate = useNavigate();
@@ -22,6 +22,8 @@ function Payment() {
     return answerToAsk ? navigate('/My') : navigate('/');
   };
 
+  // console.log(musical);
+
   const tossPaymentOperator = () => {
     if (simplePay === '토스페이' && isAgreeTermChecked) {
       loadTossPayments(clientKey).then(tossPayments => {
@@ -29,12 +31,12 @@ function Payment() {
           .requestPayment(simplePay, {
             // 결제수단 파라미터
             // 결제 정보 파라미터
-            amount: 460000,
+            amount: musical.totalAmount,
             orderId: 'RBxkWlcf1bFBP5LGTpOdf',
             orderName: `${musical.selectedMusical?.title}, ${
               musical.selectedSeats?.seatValues[0]
             } 외 ${musical.selectedSeats?.numberOfSeats - 2}석`,
-            customerName: userName,
+            customerName: username,
           })
           .then(function (result) {
             // 결제가 성공했을 때 처리
@@ -42,7 +44,7 @@ function Payment() {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                authorization: localStorage.getItem('Token'),
+                authorization: localStorage.getItem('TOKEN'),
               },
               body: JSON.stringify({
                 totalAmount: musical.totalAmount,
@@ -69,7 +71,7 @@ function Payment() {
 
   useEffect(() => {
     const userData = JSON.parse(sessionStorage.getItem('userData'));
-    const kakaoUserName = JSON.parse(localStorage.getItem('userName'));
+    const kakaoUserName = localStorage.getItem('username');
     setMusical(userData);
     setUserName(kakaoUserName);
   }, []);

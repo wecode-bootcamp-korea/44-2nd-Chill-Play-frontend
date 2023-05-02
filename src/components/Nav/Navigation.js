@@ -20,7 +20,7 @@ function Navigation({ isActive }) {
   };
 
   const goToDetail = detailId => {
-    navigate(`/productdetail/${detailId}`);
+    navigate(`/productdetail/detail/${detailId}`);
     setSearchText('');
   };
 

@@ -10,4 +10,5 @@ export const API = {
   seatSelection: `${BASE_URL}/seat/`,
   payment: `${BASE_URL}/orders`,
   photoReview: `${BASE_URL}/reviews`,
+  mypage: `${BASE_URL}/mypage/info?&limit=10`,
 };

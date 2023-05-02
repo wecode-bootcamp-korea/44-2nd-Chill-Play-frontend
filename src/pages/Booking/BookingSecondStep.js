@@ -21,12 +21,9 @@ function BookingSecondStep() {
     })
       .then(response => response.json())
       .then(result => {
-        console.log(result[0].bookedSeats);
-        setBookedSeatsData(result[0].bookedSeats);
+        setBookedSeatsData(result[0]);
       });
   }, []);
-
-  console.log(bookedSeatsData);
 
   return (
     <PageContainer>
@@ -46,7 +43,7 @@ function BookingSecondStep() {
         <SeatsContainer>
           <BookSeats
             ticketCount={ticketCount}
-            bookedSeats={bookedSeatsData && bookedSeatsData}
+            bookedSeats={bookedSeatsData && bookedSeatsData.bookedSeats}
           />
         </SeatsContainer>
         <SelectedSeatsInfo

@@ -11,6 +11,7 @@ function NavHeader() {
 
   const LogoutHandler = () => {
     localStorage.removeItem('TOKEN');
+    localStorage.removeItem('username');
     setCurrentLogin(prev => !prev);
   };
 

@@ -47,7 +47,7 @@ function Review({ musicalId }) {
         authorization: localStorage.getItem('TOKEN'),
       },
     }).then(res => {
-      if (res.status === 200) {
+      if (res.status === 204) {
         fetchReviewData();
       } else {
         alert('삭제할 수 없어요!');
@@ -60,7 +60,7 @@ function Review({ musicalId }) {
     const star = score.filter(Boolean).length;
     formData.append('content', reply);
     formData.append('score', star);
-    formData.append('musicalId', '1');
+    formData.append('musicalId', musicalId);
     formData.append('image', image);
     setImage(null);
     setReply('');
@@ -123,7 +123,7 @@ function Review({ musicalId }) {
                 <AiFillStar size={24} color=" #ffd134" />
               </div>
               <span>
-                <strong>{reviewData.averagePoint} </strong>/ 5
+                <strong>{reviewData?.averagePoint} </strong>/ 5
               </span>
             </AveragePoint>
             <UploadButton onClick={showModal}>

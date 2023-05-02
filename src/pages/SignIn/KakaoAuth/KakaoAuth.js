@@ -25,14 +25,14 @@ function KakaoAuth() {
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify({
               kakaoAccessToken: data.access_token,
-              nickName: '',
+              nickname: '',
             }),
           })
             .then(response => response.json())
             .then(result => {
               if (result.token) {
                 localStorage.setItem('TOKEN', result.token);
-                localStorage.setItem('userName', result.nickName);
+                localStorage.setItem('username', result.nickname);
                 alert('로그인 성공했어요!');
                 navigate('/');
               }
