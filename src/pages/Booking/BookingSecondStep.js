@@ -9,7 +9,7 @@ import { API } from '../../config';
 
 function BookingSecondStep() {
   const [ticketCount, setTicketCount] = useState(1);
-  const [bookedSeatsData, setBookedSeatsData] = useState({});
+  const [bookedSeatsData, setBookedSeatsData] = useState([]);
   const selectedSchedule = useBookingStore(
     state => state.bookingState.selectedTime
   );
@@ -21,9 +21,12 @@ function BookingSecondStep() {
     })
       .then(response => response.json())
       .then(result => {
-        setBookedSeatsData(result[3]?.bookedSeatsData);
+        console.log(result[0].bookedSeats);
+        setBookedSeatsData(result[0].bookedSeats);
       });
   }, []);
+
+  console.log(bookedSeatsData);
 
   return (
     <PageContainer>
@@ -43,12 +46,12 @@ function BookingSecondStep() {
         <SeatsContainer>
           <BookSeats
             ticketCount={ticketCount}
-            bookedSeats={bookedSeatsData[0]?.bookedSeats}
+            bookedSeats={bookedSeatsData && bookedSeatsData}
           />
         </SeatsContainer>
         <SelectedSeatsInfo
-          vipPrice={bookedSeatsData[0]?.vipPrice}
-          regPrice={bookedSeatsData[0]?.regPrice}
+          vipPrice={bookedSeatsData && bookedSeatsData.vipPrice}
+          regPrice={bookedSeatsData && bookedSeatsData.regPrice}
         />
       </PageContent>
     </PageContainer>
