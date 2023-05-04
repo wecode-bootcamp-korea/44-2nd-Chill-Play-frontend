@@ -24,7 +24,7 @@ function ButtonOptions({
   const handleButtonClick = (value, pageId = null) => {
     if (link) {
       handleCursorLeave();
-      navigate(`/productdetail/${pageId}`);
+      navigate(`/productdetail/detail/${pageId}`, { state: 'chatbot' });
       return;
     }
     handleOptionClick(value);

@@ -11,7 +11,6 @@ function ProductDetail() {
   const navigate = useNavigate();
   const params = useParams();
   const musicalId = params.id;
-
   const goToBooking = musical => {
     navigate(`/booking`, { state: musical });
   };
@@ -33,13 +32,12 @@ function ProductDetail() {
   };
 
   useEffect(() => {
-    fetch(`${API.productDetail}/${musicalId}`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json;charset=utf-8' },
-    })
-      .then(response => response.json())
-      .then(result => setMusicalData(result));
-  }, [musicalId]);
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     fetch('/data/musicaldetail.json', {
@@ -49,7 +47,15 @@ function ProductDetail() {
       .then(response => response.json())
       .then(result => setMusicalBanner(result));
   }, [musicalId]);
-  // console.log(musicalData);
+
+  function fetchData() {
+    fetch(`${API.productDetail}/${musicalId}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    })
+      .then(response => response.json())
+      .then(result => setMusicalData(result));
+  }
 
   return (
     <div>
