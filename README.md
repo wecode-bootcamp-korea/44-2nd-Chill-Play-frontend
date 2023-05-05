@@ -179,7 +179,7 @@
 - 성공 시, fetch API를 통해 사용자가 예매한 내역을 담아 백엔드에 보내고,   
   결제 실패 시, .catch promise를 사용해 결제 취소 사유를 알 수 있도록 알럿창을 구현했습니다.
 
-<img src="https://user-images.githubusercontent.com/125179082/235449558-2ab78521-8899-4275-a5b5-cf8d4218de8c.gif" width="830px" alt="마이"></img>
+<img src="https://user-images.githubusercontent.com/125179082/235449558-2ab78521-8899-4275-a5b5-cf8d4218de8c.gif" width="600px" alt="마이"></img>
 
 <br/>
 
