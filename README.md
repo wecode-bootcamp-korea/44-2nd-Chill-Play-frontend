@@ -21,42 +21,21 @@
 - <a href="https://github.com/ggkim0614">왕광현<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/hongyeollee"/></a>
 - <a href="https://github.com/wkh24">최상현<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/hongyeollee"/></a>
 
-<div align=center><h1>📚 STACKS</h1></div>
+<br/>
 
-<div align=center> 
+<div><h2>Stacks</h2></div>
 
-  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-  <br>
-  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
-  <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"> 
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"> 
+ 
 
-  <br>
-  <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
-  <img src="https://img.shields.io/badge/.ENV-ECD53F?style=for-the-badge&logo=.ENV&logoColor=black">
-  <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
-  <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
-  <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white">
-  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white">
-  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=Jest&logoColor=white">
-  <img src="https://img.shields.io/badge/amazonaws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white">
-  <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white">
-  <img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/.ENV-ECD53F?style=for-the-badge&logo=.ENV&logoColor=black"> <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white"> <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white"> <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=Jest&logoColor=white"> <img src="https://img.shields.io/badge/amazonaws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"> <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"> <img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
 
 
+<img src="https://img.shields.io/badge/trello-61DAFB?style=for-the-badge&logo=trello&logoColor=black"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white">
 
-
-  <br>
-  <img src="https://img.shields.io/badge/trello-61DAFB?style=for-the-badge&logo=trello&logoColor=black"> 
-  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white">
-
-  <br>
 </div>
 
-<br /> 
+<br/> 
 <br/>
 
 ## 프로젝트 기간
@@ -189,8 +168,36 @@
  
 #### 외부 결제 API를 더한 간편 결제
 - 티켓 구매하려는 유저가 선택한 값을 확인할 수 있는 정보값이 화면 상단에 출력됩니다.
-- MockUp 결제 API를 제공하는 
-- MockUp 결제 API를 제공하ㅗ
+- 사용자가 선택한 예매정보를 서버가 아닌 예매페이지에서 최종 CTA버튼인 '결제하기' 버튼을 눌렸을 시 sessionStorage에 저장한 뒤, 데이터를 활용합니다.
+- Radio 체크버튼으로 사용자가 결제방식을 선택할 수 있게 하여 해당하는 값에 따라 하단 결제영역을 노출시키고,   
+  측면 결제정보 영역에 결제방식을 출력하여 재확인이 가능합니다.
+- 결제방식과 약관동의를 체크하고 결제하기 버튼을 누르면 MockUp 결제 API를 제공하는 Toss페이먼츠 함수가 실행됩니다.
+- 성공 시, fetch API를 통해 사용자가 예매한 내역을 담아 백엔드에 보내고,   
+  결제 실패 시, .catch promise를 사용해 결제 취소 사유를 알 수 있도록 알럿창을 구현했습니다.
+
+![image](https://user-images.githubusercontent.com/124162355/236421716-221604c8-d855-4d40-859e-f7ef481fe7bc.png)
+
+<br/>
+
+### ➑ 마이페이지 ###
+
+####프로필 확인
+카카오 계정의 프로필과 유저네임이 화면 상단에 노출되어 마이페이지 공간만의 친근함과 특별함을 제공합니다.
+ 
+#### 예매한 티켓
+- '예매한 티켓' 탭에서는 구매내역 중 가장 최근 구매한 티켓이 보여집니다.  
+ 실제로 티켓을 받는 듯한 사용자 경험을 더하기 위해 framer-motion라이브러리를 이용하여 봉투를 클릭 시,  
+ 예매한 티켓이 나오는 모션이 동작합니다.
+- 컨텐츠 상단 우측에 '티켓 이미지로 저장하기' 버튼을 더하여 html2canvas 라이브러리를 사용해   
+  티켓이미지가 다운로드되는 기능을 만들었습니다.
+  
+#### 결제 내역
+- '결제 내역' 탭엔 이제까지 유저가 구매한 티켓 내역을 확인할 수 있도록 rc-collapse 라이브러리를 사용하여 데이터를 출력합니다.
+- 각 예매내역을 클릭할 시, 아코디언 형식으로 상세정보 보기가 가능합니다.
+<img src="https://user-images.githubusercontent.com/37966668/235346899-b6289db1-9cf3-4dea-be70-87d9c1c2a2bb.png" width="600px" alt="마이"></img>
+<img src="https://user-images.githubusercontent.com/37966668/235346904-a3d093cd-6dc0-4d9c-bcf9-576de188cc8c.png" width="600px" alt="마이"></img>
+<img src="https://user-images.githubusercontent.com/37966668/235346921-ceee5c64-ee1c-4e7b-88b2-8e3932f2da99.png" width="600px" alt="마이"></img>
+<img src="https://user-images.githubusercontent.com/37966668/235346928-f7a08184-80fa-47e4-98a4-fd83c2fb08f9.png" width="600px" alt="마이"></img>
 
 
 
