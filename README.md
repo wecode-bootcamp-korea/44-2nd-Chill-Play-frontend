@@ -103,8 +103,16 @@
 <img src="https://user-images.githubusercontent.com/124162355/233910607-7451d224-7f5f-428a-9e73-ad79e3f26aa4.png" width="600px" alt="로그인"></img>  
 <img src="https://user-images.githubusercontent.com/124162355/233910614-d9ac5f92-5a30-4a51-8f63-77214d8006b8.png" width="600px" alt="로그인"></img>  
 
+<br/>
 
+### 메인 ###
+#### 영상과 이미지로 생동감을 더하여 뮤지컬을 홍보하는 메인 화면
+- 사용자가 처음 사이트 진입 시, 뮤지컬에 대한 관심도를 높일 수 있도록 상단 배너에 다양한 뮤지컬 홍보영상과 이미지로 캐러셀 UI를 구현했습니다.  
+  Arrow 버튼을 클릭하지 않아도 일정한 속도로 자동 재생이 됩니다.
+- 상단 배너와 함께 인기 많은 뮤지컬 차트를 보여줄 수 있도록 백엔드와 fetch API 활용하여 데이터를 출력합니다.
+- 차트에 마우스를 올리면, 해당 뮤지컬을 예매하거나 상세페이지로 이동할 수 있는 동적 라우팅을 적용했습니다.
 
+![main](https://user-images.githubusercontent.com/124162355/236403232-7baeb901-a051-4b22-8bb6-353a2671993e.gif)
 
 
 
