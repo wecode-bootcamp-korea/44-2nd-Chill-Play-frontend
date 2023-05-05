@@ -51,8 +51,9 @@
 
 <img src="https://user-images.githubusercontent.com/124162355/236395178-542d4907-b12f-41f1-87e8-fdbc88df8fff.png" width="200px" alt="cover-chill play"></img>
 
-뮤지컬은 대중적으로 많은 사람들이 관심을 가지고 있는 예술의 한 분야입니다. 관람객의 오감을 자극하고 힐링과 영감을 준다는 의미에서  
-저희 웹서비스를 '뮤즈'라고 지었습니다. '뮤즈'를 통해 인기 있는 작품을 추천받고, 빠르고 간편한 절차를 통해 뮤지컬을 예매할 수 있습니다.
+뮤지컬은 대중적으로 많은 사람들이 관심을 가지고 있는 예술의 한 분야입니다.   
+관람객의 오감을 자극하고 힐링과 영감을 준다는 의미에서 저희 웹서비스를 '뮤즈'라고 지었습니다.   
+'뮤즈'를 통해 인기 있는 작품을 추천받고, 빠르고 간편한 절차를 통해 뮤지컬을 예매할 수 있습니다.
 
 <br/>
 <br/>
@@ -67,6 +68,15 @@
 카카오로 로그인하기 -> 메인 둘러보기 -> 챗봇을 통해 뮤지컬 추천받기 -> 뮤지컬 리스트에서 원하는 순서대로 뮤지컬 보기 ->   
 보고 싶은 뮤지컬 상세정보 확인하기 -> 뮤지컬 예매하기 -> 결제하기 -> 마이페이지에서 예매 내역 확인하기 -> 관람한 뮤지컬 포토리뷰 작성하기
 ```
+
+<br/>
+
+### ⓿ Nav ###
+- 로그인/로그아웃 기능으로 TOKEN 존재여부에 따라 텍스트가 바뀌도록 구현했습니다.
+- 바로 뮤지컬을 검색해서 상세정보를 확인할 수 있도록 Fetch API를 통해 백엔드와 통신하여 필터된 검색 리스트를 출력합니다.
+- 하단 우측에 예매하기 플로팅 버튼이 있어야하는 페이지만 나타날 수 있도록 구현하였습니다.
+
+<img src="https://user-images.githubusercontent.com/124162355/236441532-b8737b58-cc44-4a12-a007-4719860af7dc.gif" width="600px" alt="nav"></img> 
 
 <br/>
 
@@ -125,7 +135,7 @@
 <br/>
 
 ### ➎ 상세 ###
-- 상단에 프론트엔드에서 준비한 gif Mock Data를 준비해 해당 뮤지컬의 홍보 영상을 보여줌으로써 마케팅 효과를 더했습니다.
+- 상단에 프론트엔드에서 Mock Data를 준비해 해당 뮤지컬의 홍보 영상을 보여줌으로써 마케팅 효과를 더했습니다.
 - Fetch API통신에서 API주소 End Point에 해당 페이지의 정보가 출력되도록 동적 라우팅 기능을 사용했습니다.
 - 예매율을 차트를 통해 시각적으로 한 눈에 보여줄 수 있도록 Chart.js 라이브러리를 사용했습니다.
 - 캐러셀을 이용해 한 스크린 안에서 뮤지컬 스틸 컷을 여러 장 볼 수 있도록 구현했습니다.
@@ -162,9 +172,8 @@
 - 주문 과정 중 선택된 조건들을 전역에서 읽을 수 있는 스토어에 저장해, 선택될 때마다 스테이터스 바에 출력됩니다.
 - 뮤지컬, 상영관, 날짜, 상영 시간 선택마다 쿼리 스트링을 사용하여 엔드포인트에 값을 반영하여 원하는 조건을 구매페이지에 보내어지도록 구현했습니다.
 
-<img src="https://user-images.githubusercontent.com/37966668/234263653-ca36b23f-7b90-4c53-970d-d24677072e2d.png" width="600px" alt="예매"></img>
-<img src="https://user-images.githubusercontent.com/37966668/234263966-fcaf1e21-001f-4308-92d3-37c5ef04955d.png" width="600px" alt="예매"></img>
-<img src="https://user-images.githubusercontent.com/37966668/234825595-e13c397e-d28a-44db-b339-fc1d9a73f00d.png" width="600px" alt="예매"></img>
+<img src="https://user-images.githubusercontent.com/124162355/236441990-6bb15faf-cb02-4a4c-b690-6b074eaa440b.gif" width="600px" alt="예매"></img>
+
 
 <br/>
 
@@ -185,7 +194,7 @@
 
 ### ➑ 마이페이지 ###
 
-####프로필 확인
+#### 프로필 확인  
 카카오 계정의 프로필과 유저네임이 화면 상단에 노출되어 마이페이지 공간만의 친근함과 특별함을 제공합니다.
  
 #### 예매한 티켓
@@ -198,10 +207,9 @@
 #### 결제 내역
 - '결제 내역' 탭엔 이제까지 유저가 구매한 티켓 내역을 확인할 수 있도록 rc-collapse 라이브러리를 사용하여 데이터를 출력합니다.
 - 각 예매내역을 클릭할 시, 아코디언 형식으로 상세정보 보기가 가능합니다.
-<img src="https://user-images.githubusercontent.com/37966668/235346899-b6289db1-9cf3-4dea-be70-87d9c1c2a2bb.png" width="600px" alt="마이"></img>
-<img src="https://user-images.githubusercontent.com/37966668/235346904-a3d093cd-6dc0-4d9c-bcf9-576de188cc8c.png" width="600px" alt="마이"></img>
-<img src="https://user-images.githubusercontent.com/37966668/235346921-ceee5c64-ee1c-4e7b-88b2-8e3932f2da99.png" width="600px" alt="마이"></img>
-<img src="https://user-images.githubusercontent.com/37966668/235346928-f7a08184-80fa-47e4-98a4-fd83c2fb08f9.png" width="600px" alt="마이"></img>
+
+<img src="https://user-images.githubusercontent.com/124162355/236439478-6538699d-59f1-453b-a5f8-25d9a9ed7a55.gif" width="600px" alt="마이"></img>
+
 
 <br/>
 
@@ -213,5 +221,6 @@
 - 관람한 뮤지컬에 대한 평가를 수치화할 수 있는 리뷰 별점 기능 구현했습니다.
 - 페이징 쿼리(offset, limit)를 활용하여 더보기 버튼 클식 시, 리뷰 리스트 누적되어 출력되어집니다.
 - 사용자가 쓴 리뷰에 한해 DELETE 메서드를 활용하여 삭제 기능 구현했습니다.
+
 ![포토리뷰](https://user-images.githubusercontent.com/124162355/236424765-9debe49a-e130-499a-a34c-6ee1ef1d58f5.gif)
 
