@@ -4,7 +4,7 @@
 <br/>
 <br /> 
 
-<img src="https://user-images.githubusercontent.com/124162355/236394363-73e1e200-3fe6-4e1b-b7f0-a7f54dc42fbc.png" width="600px" alt="cover-chill play"></img>
+<img src="https://user-images.githubusercontent.com/124162355/236394363-73e1e200-3fe6-4e1b-b7f0-a7f54dc42fbc.png" width="830px" alt="cover-chill play"></img>
 
 ## Chill & Play 멤버
 #### FrontEnd
@@ -199,5 +199,15 @@
 <img src="https://user-images.githubusercontent.com/37966668/235346921-ceee5c64-ee1c-4e7b-88b2-8e3932f2da99.png" width="600px" alt="마이"></img>
 <img src="https://user-images.githubusercontent.com/37966668/235346928-f7a08184-80fa-47e4-98a4-fd83c2fb08f9.png" width="600px" alt="마이"></img>
 
+<br/>
 
+### ❾ 포토리뷰 ###
+
+#### 뮤지컬 예매를 고민하는 유저를 위한 포토 리뷰를 남길 수 있는 컨텐츠 제작
+- 신뢰도를 높이기 위해 해당하는 뮤지컬을 관람한 이력이 있는 사용자만 리뷰 남길 수 있도록 fetch API 활용하여 통신
+- 이미지 파일을 업로드하여 원하는 이미지를 선택했는지에 대한 미리보기 기능 제공
+- 관람한 뮤지컬에 대한 평가를 수치화할 수 있는 리뷰 별점 기능 구현
+- 페이징 쿼리(offset, limit)를 활용하여 더보기 버튼 클식 시, 리뷰 리스트 누적되어 출력
+- 사용자가 쓴 리뷰에 한해 DELETE 메서드를 활용하여 삭제 기능 구현 
+![포토리뷰](https://user-images.githubusercontent.com/124162355/236424765-9debe49a-e130-499a-a34c-6ee1ef1d58f5.gif)
 
