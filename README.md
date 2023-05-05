@@ -118,6 +118,7 @@
   이중으로 필터 옵션을 적용시킬 수 있어서 사용자가 관람하길 원하는 뮤지컬을 좁혀 나갈 수 있도록 리스트를 보여줍니다.
 - 상영 예정작엔 뮤지컬의 개봉날짜와 현재 날짜를 비교하여 D-Day 를 보여줍니다.  
   백엔드에서 보내준 상영시작일을 subString() 메서드와 JavaScript 내장 메서드인 new Date(), if문을 활용해 날짜를 계산하여 값을 출력합니다.
+  
 <img src="https://files.slack.com/files-pri/TH0U6FBTN-F055Z5G6RV5/muse-list.gif" width="830px" alt="리스트"></img>
 
 <br/>
@@ -127,6 +128,7 @@
 - Fetch API통신에서 API주소 End Point에 해당 페이지의 정보가 출력되도록 동적 라우팅 기능을 사용했습니다.
 - 예매율을 차트를 통해 시각적으로 한 눈에 보여줄 수 있도록 Chart.js 라이브러리를 사용했습니다.
 - 캐러셀을 이용해 한 스크린 안에서 뮤지컬 스틸 컷을 여러 장 볼 수 있도록 구현했습니다.
+
 <img src="https://files.slack.com/files-pri/TH0U6FBTN-F056DMN5X6W/muse-detail.gif" width="830px" alt="리스트"></img>
 
 <br/>
